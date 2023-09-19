@@ -9,8 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @State var username = ""
-    @State var password = ""
+    @ObservedObject private var viewModel = LoginViewModel()
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -37,18 +36,28 @@ struct LoginView: View {
                 Rectangle()
                     .fill(Color.clear)
                     .frame(height: 10)
-                AppTextField(username: $username, iconName: "person", hint: "Masukkan NIP Anda...")
-                AppSecureField(text: $password, iconName: "lock", hint: "Masukkan kata sandi Anda...")
+                AppTextField(username: $viewModel.username, iconName: "person", hint: "Masukkan NIP Anda...")
+                AppSecureField(text: $viewModel.password, iconName: "lock", hint: "Masukkan kata sandi Anda...")
                 Rectangle()
                     .fill(Color.clear)
                     .frame(height: 10)
                 
-                NavigationLink(destination: {
-                    DashboardView()
-                        .navigationBarBackButtonHidden()
-                }, label: {
-                    AppNavLinkView(title: "Masuk")
+                AppButton(title: "Login",showLoading: $viewModel.showLoading, action: {
+                    viewModel.login()
                 })
+                .navigationDestination(isPresented: $viewModel.isLogin) {
+                    DashboardView()
+                        .navigationBarHidden(true)
+                }
+                .alert(isPresented: $viewModel.showAlert) {
+                    Alert(
+                        title: Text("Login Gagal"),
+                        message: Text("Username atau password salah"),
+                        dismissButton: .cancel(Text("OK"), action: {
+                            viewModel.dismissAlert()
+                        })
+                    )
+                }
             }
             
             Rectangle()
