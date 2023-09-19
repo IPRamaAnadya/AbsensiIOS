@@ -9,35 +9,37 @@ import SwiftUI
 
 struct SplashView: View {
     
-    @State private var isFinish = false
+    @ObservedObject private var viewModel = SplashViewModel()
     
     var body: some View {
         ZStack {
-            if !isFinish {
-                VStack {
-                    Spacer()
-                    Image("app_logo")
-                    Spacer()
-                    Text("Develop by Maiharta")
-                        .font(.caption2)
-                        .foregroundColor(.white)
-                        .padding()
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(
-                    Color("primary")
-                )
-            } else {
-                LoginView()
-                    .transition(.move(edge: .bottom))
-                    .animation(.spring())
+            VStack {
+                Spacer()
+                Image("app_logo")
+                Spacer()
+                Text("Develop by Maiharta")
+                    .font(.caption2)
+                    .foregroundColor(.white)
+                    .padding()
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(
+                Color("primary")
+            )
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                isFinish = true
+                viewModel.getNextPage()
             }
         }
+        .navigationDestination(isPresented: $viewModel.goToDashboard, destination: {
+            DashboardView()
+                .navigationBarHidden(true)
+        })
+        .navigationDestination(isPresented: $viewModel.goToLogin, destination: {
+            LoginView()
+                .navigationBarHidden(true)
+        })
     }
 }
 

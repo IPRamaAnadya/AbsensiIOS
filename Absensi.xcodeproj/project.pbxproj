@@ -20,6 +20,18 @@
 		079538E22AB57DB40019C980 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 079538E12AB57DB40019C980 /* Lottie */; };
 		079538E52AB57E5B0019C980 /* success_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 079538E42AB57E5B0019C980 /* success_animation.json */; };
 		079538E72AB57F2B0019C980 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079538E62AB57F2B0019C980 /* LottieView.swift */; };
+		07A5D6DA2AB95702007241E2 /* ServerAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6D92AB95702007241E2 /* ServerAccessor.swift */; };
+		07A5D6DD2AB95725007241E2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 07A5D6DC2AB95725007241E2 /* Alamofire */; };
+		07A5D6E22AB962CC007241E2 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6E12AB962CC007241E2 /* UserSettings.swift */; };
+		07A5D6E52AB96528007241E2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6E42AB96528007241E2 /* LoginViewModel.swift */; };
+		07A5D6E92AB9663A007241E2 /* NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6E82AB9663A007241E2 /* NetworkRepository.swift */; };
+		07A5D6EC2AB96770007241E2 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6EB2AB96770007241E2 /* Env.swift */; };
+		07A5D6EF2AB97830007241E2 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6EE2AB97830007241E2 /* Credential.swift */; };
+		07A5D6F12AB97854007241E2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6F02AB97854007241E2 /* User.swift */; };
+		07A5D6F32AB9788B007241E2 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6F22AB9788B007241E2 /* Meta.swift */; };
+		07A5D6F62AB978E1007241E2 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6F52AB978E1007241E2 /* LoginResponse.swift */; };
+		07A5D6F92AB97953007241E2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6F82AB97953007241E2 /* Helpers.swift */; };
+		07A5D6FC2AB987E3007241E2 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6FB2AB987E3007241E2 /* SplashViewModel.swift */; };
 		07F66DBE2AB2E8A5003DF9FB /* AbsensiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F66DBD2AB2E8A5003DF9FB /* AbsensiApp.swift */; };
 		07F66DC02AB2E8A5003DF9FB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F66DBF2AB2E8A5003DF9FB /* MainView.swift */; };
 		07F66DC22AB2E8A7003DF9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07F66DC12AB2E8A7003DF9FB /* Assets.xcassets */; };
@@ -50,6 +62,17 @@
 		079538DE2AB57CEC0019C980 /* AbsentSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentSuccessView.swift; sourceTree = "<group>"; };
 		079538E42AB57E5B0019C980 /* success_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success_animation.json; sourceTree = "<group>"; };
 		079538E62AB57F2B0019C980 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		07A5D6D92AB95702007241E2 /* ServerAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAccessor.swift; sourceTree = "<group>"; };
+		07A5D6E12AB962CC007241E2 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		07A5D6E42AB96528007241E2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		07A5D6E82AB9663A007241E2 /* NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepository.swift; sourceTree = "<group>"; };
+		07A5D6EB2AB96770007241E2 /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
+		07A5D6EE2AB97830007241E2 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		07A5D6F02AB97854007241E2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		07A5D6F22AB9788B007241E2 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		07A5D6F52AB978E1007241E2 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		07A5D6F82AB97953007241E2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		07A5D6FB2AB987E3007241E2 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		07F66DBA2AB2E8A5003DF9FB /* Absensi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Absensi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F66DBD2AB2E8A5003DF9FB /* AbsensiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsensiApp.swift; sourceTree = "<group>"; };
 		07F66DBF2AB2E8A5003DF9FB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -74,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				079538E22AB57DB40019C980 /* Lottie in Frameworks */,
+				07A5D6DD2AB95725007241E2 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +185,106 @@
 			path = Animation;
 			sourceTree = "<group>";
 		};
+		07A5D6D82AB956E3007241E2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				07A5D6DF2AB96292007241E2 /* Network */,
+				07A5D6DE2AB9628B007241E2 /* Local */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		07A5D6DE2AB9628B007241E2 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				07A5D6EA2AB9675C007241E2 /* Env */,
+				07A5D6E02AB962B9007241E2 /* UserSettings */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		07A5D6DF2AB96292007241E2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				07A5D6E72AB965F4007241E2 /* Repository */,
+				07A5D6E62AB965EB007241E2 /* Manager */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		07A5D6E02AB962B9007241E2 /* UserSettings */ = {
+			isa = PBXGroup;
+			children = (
+				07A5D6E12AB962CC007241E2 /* UserSettings.swift */,
+			);
+			path = UserSettings;
+			sourceTree = "<group>";
+		};
+		07A5D6E32AB96513007241E2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				07A5D6E42AB96528007241E2 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		07A5D6E62AB965EB007241E2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				07A5D6D92AB95702007241E2 /* ServerAccessor.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		07A5D6E72AB965F4007241E2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				07A5D6E82AB9663A007241E2 /* NetworkRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		07A5D6EA2AB9675C007241E2 /* Env */ = {
+			isa = PBXGroup;
+			children = (
+				07A5D6EB2AB96770007241E2 /* Env.swift */,
+			);
+			path = Env;
+			sourceTree = "<group>";
+		};
+		07A5D6ED2AB97731007241E2 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				07A5D6EE2AB97830007241E2 /* Credential.swift */,
+				07A5D6F02AB97854007241E2 /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		07A5D6F42AB978CA007241E2 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				07A5D6F52AB978E1007241E2 /* LoginResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		07A5D6F72AB97936007241E2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				07A5D6F82AB97953007241E2 /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		07A5D6FA2AB987D3007241E2 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				07A5D6FB2AB987E3007241E2 /* SplashViewModel.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		07F66DB12AB2E8A5003DF9FB = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +304,7 @@
 		07F66DBC2AB2E8A5003DF9FB /* Absensi */ = {
 			isa = PBXGroup;
 			children = (
+				07A5D6D82AB956E3007241E2 /* Data */,
 				07F66DCE2AB2E901003DF9FB /* Other */,
 				07F66DCB2AB2E8B8003DF9FB /* Model */,
 				07F66DCC2AB2E8DF003DF9FB /* ViewModel */,
@@ -200,6 +325,9 @@
 		07F66DCB2AB2E8B8003DF9FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				07A5D6F42AB978CA007241E2 /* Response */,
+				07A5D6ED2AB97731007241E2 /* User */,
+				07A5D6F22AB9788B007241E2 /* Meta.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,6 +335,8 @@
 		07F66DCC2AB2E8DF003DF9FB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				07A5D6FA2AB987D3007241E2 /* Splash */,
+				07A5D6E32AB96513007241E2 /* Login */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,6 +355,7 @@
 		07F66DCE2AB2E901003DF9FB /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				07A5D6F72AB97936007241E2 /* Helpers */,
 				079538E32AB57E4D0019C980 /* Animation */,
 				07F66DBD2AB2E8A5003DF9FB /* AbsensiApp.swift */,
 				07F66DC12AB2E8A7003DF9FB /* Assets.xcassets */,
@@ -340,6 +471,7 @@
 			name = Absensi;
 			packageProductDependencies = (
 				079538E12AB57DB40019C980 /* Lottie */,
+				07A5D6DC2AB95725007241E2 /* Alamofire */,
 			);
 			productName = Absensi;
 			productReference = 07F66DBA2AB2E8A5003DF9FB /* Absensi.app */;
@@ -371,6 +503,7 @@
 			mainGroup = 07F66DB12AB2E8A5003DF9FB;
 			packageReferences = (
 				079538E02AB57DB40019C980 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				07A5D6DB2AB95725007241E2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 07F66DBB2AB2E8A5003DF9FB /* Products */;
 			projectDirPath = "";
@@ -399,23 +532,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A5D6E92AB9663A007241E2 /* NetworkRepository.swift in Sources */,
 				07F66DC02AB2E8A5003DF9FB /* MainView.swift in Sources */,
 				07F66DEA2AB32129003DF9FB /* MapView.swift in Sources */,
 				079538DD2AB573B80019C980 /* CameraModel.swift in Sources */,
 				07F66DBE2AB2E8A5003DF9FB /* AbsensiApp.swift in Sources */,
 				079538DA2AB573830019C980 /* CameraPreview.swift in Sources */,
+				07A5D6DA2AB95702007241E2 /* ServerAccessor.swift in Sources */,
 				078109522AB48A94005B4F1B /* ForgotPasswordView.swift in Sources */,
 				07F66DD62AB2EF1E003DF9FB /* LoginView.swift in Sources */,
+				07A5D6EC2AB96770007241E2 /* Env.swift in Sources */,
+				07A5D6FC2AB987E3007241E2 /* SplashViewModel.swift in Sources */,
+				07A5D6F92AB97953007241E2 /* Helpers.swift in Sources */,
+				07A5D6E52AB96528007241E2 /* LoginViewModel.swift in Sources */,
 				07F66DE52AB30C60003DF9FB /* HomeView.swift in Sources */,
+				07A5D6F32AB9788B007241E2 /* Meta.swift in Sources */,
+				07A5D6F12AB97854007241E2 /* User.swift in Sources */,
 				0781094F2AB48A02005B4F1B /* CreatePasswordView.swift in Sources */,
 				078109552AB48CA8005B4F1B /* HistoryView.swift in Sources */,
 				07F66DD32AB2EA5C003DF9FB /* SplashView.swift in Sources */,
 				07F66DE12AB309F1003DF9FB /* DashboardView.swift in Sources */,
 				07F66DD82AB30621003DF9FB /* AppTextField.swift in Sources */,
 				078109492AB42C63005B4F1B /* AboutView.swift in Sources */,
+				07A5D6F62AB978E1007241E2 /* LoginResponse.swift in Sources */,
 				07F66DED2AB334BB003DF9FB /* DetailEventView.swift in Sources */,
 				07F66DDC2AB30642003DF9FB /* AppButton.swift in Sources */,
+				07A5D6E22AB962CC007241E2 /* UserSettings.swift in Sources */,
 				07F66DDA2AB30634003DF9FB /* AppSecureField.swift in Sources */,
+				07A5D6EF2AB97830007241E2 /* Credential.swift in Sources */,
 				0781094C2AB4831A005B4F1B /* UpdatePasswordView.swift in Sources */,
 				07F66DE72AB30CA4003DF9FB /* ProfileView.swift in Sources */,
 				079538DF2AB57CEC0019C980 /* AbsentSuccessView.swift in Sources */,
@@ -561,6 +705,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -592,6 +737,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -637,6 +783,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		07A5D6DB2AB95725007241E2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -644,6 +798,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 079538E02AB57DB40019C980 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		07A5D6DC2AB95725007241E2 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07A5D6DB2AB95725007241E2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

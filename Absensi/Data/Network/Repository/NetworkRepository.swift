@@ -26,7 +26,14 @@ class NetworkRepository {
                 switch result {
                 case .success(let data):
                     completion(true)
-                    print("Login Success \n\(data)")
+                    print("Login Success")
+                    guard let jsonData = data as? Data else {
+                        print("json is not Data")
+                        return
+                    }
+                    let loginData = Helpers.shared.ParsingJsonToModel(LoginResponse.self, from: jsonData)
+                    UserSettings.shared.setIdentities(name: loginData?.credential?.user?.name ?? "", role: loginData?.credential?.user?.skpd ?? "", profile: loginData?.credential?.user?.wajahURL ?? "", position: loginData?.credential?.user?.jabatan ?? "")
+                    
                 case .failure(_):
                     completion(false)
                     print("Login Failed")

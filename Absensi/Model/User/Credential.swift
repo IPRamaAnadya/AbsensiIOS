@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct CredentialEntity: Codable {
+    let accessToken, tokenType: String?
+    let user: UserEntity?
+
+    enum CodingKeys: String, CodingKey {
+        case accessToken = "access_token"
+        case tokenType = "token_type"
+        case user
+    }
+}

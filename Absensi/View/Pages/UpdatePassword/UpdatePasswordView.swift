@@ -28,8 +28,8 @@ struct UpdatePasswordView: View {
                     .padding(.top, 36)
                 AppSecureField(text: $newPassword, iconName: "lock", hint: "Masukkan kata sandi baru Anda...")
                 AppSecureField(text: $confirmPassword, iconName: "lock", hint: "Konfirmasi kata sandi baru Anda...")
-                AppButton(title: "Konfirmasi", action: {})
-                    .padding(.top, 50)
+//                AppButton(title: "Konfirmasi", action: {})
+//                    .padding(.top, 50)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             

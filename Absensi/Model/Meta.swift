@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct MetaEntity: Codable {
+    let code: Int?
+    let status, message: String?
+}

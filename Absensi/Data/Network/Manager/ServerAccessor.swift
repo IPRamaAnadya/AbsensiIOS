@@ -54,15 +54,7 @@ class ServerAccessor {
                     return
                 }
                 
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    
-                        print("Success parsing response data to json")
-                    completion(.success(json))
-                } catch {
-                    print("Cant parsing response data to json")
-                    completion(.failure(error))
-                }
+                completion(.success(data))
             }
         }.resume()
     }

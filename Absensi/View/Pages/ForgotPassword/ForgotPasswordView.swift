@@ -27,8 +27,8 @@ struct ForgotPasswordView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 10)
                 AppSecureField(text: $name, iconName: "person.text.rectangle", hint: "Masukkan NIP Anda...")
-                AppButton(title: "Konfirmasi", action: {})
-                    .padding(.top, 50)
+//                AppButton(title: "Konfirmasi", action: {})
+//                    .padding(.top, 50)
             }
         }
         .navigationBarTitle("Lupa Kata Sandi")

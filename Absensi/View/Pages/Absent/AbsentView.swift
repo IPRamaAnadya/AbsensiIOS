@@ -42,7 +42,6 @@ struct AbsentView: View {
                     }, label: {
                         Image(systemName: "arrow.triangle.2.circlepath.camera")
                             .foregroundColor(.black)
-                            .fontWeight(.semibold)
                             .padding(.vertical, 10)
                             .padding(.horizontal, 10)
                             .background(Color.white)
@@ -75,25 +74,24 @@ struct AbsentView: View {
 //                    })
 //                    .padding()
 //                    .padding(.bottom, 25)
-                    AppButton(title: "Absen", action: {showAlert.toggle()})
-                        .padding()
-                        .padding(.bottom, 25)
-                    .frame(maxWidth: .infinity)
-                    .alert(isPresented: $showAlert) {
-                        Alert(
-                            title: Text("Absen Gagal"),
-                            message: Text("Wajah anda kurang good looking"),
-                            primaryButton: .cancel(Text("Ulangi")) {
-                                print("Ulangi")
-                            },
-                            secondaryButton: .destructive(Text("Kembali")) {
-                            isPresented = false
-                        })
-                    }
+//                    AppButton(title: "Absen", action: {showAlert.toggle()})
+//                        .padding()
+//                        .padding(.bottom, 25)
+//                    .frame(maxWidth: .infinity)
+//                    .alert(isPresented: $showAlert) {
+//                        Alert(
+//                            title: Text("Absen Gagal"),
+//                            message: Text("Wajah anda kurang good looking"),
+//                            primaryButton: .cancel(Text("Ulangi")) {
+//                                print("Ulangi")
+//                            },
+//                            secondaryButton: .destructive(Text("Kembali")) {
+//                            isPresented = false
+//                        })
+//                    }
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .toolbarBackground(Color.white, for: .navigationBar)
             
         }
         .navigationTitle("Absen")
@@ -107,9 +105,9 @@ struct AbsentView: View {
 
 struct AbsentView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack {
-            @State var example = false
-            AbsentView(isPresented: $example)
-        }
+        Text("Test")
+//        NavigationStack {
+//            AbsentView(isPresented: $example)
+//        }
     }
 }

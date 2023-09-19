@@ -11,6 +11,9 @@ struct HomeView: View {
     
     @State var showBottomSheet = false
     
+    private let name = UserSettings.shared.getName() ?? ""
+    private let profile = UserSettings.shared.getProfile() ?? ""
+    
     var body: some View {
         ZStack {
             GeometryReader { reader in
@@ -64,13 +67,27 @@ struct HomeView: View {
                             .overlay {
                                 VStack(spacing: 5) {
                                     Circle()
+                                        .fill(Color.clear)
                                         .frame(width: 70)
+                                        .overlay {
+                                            AsyncImage(url: URL(string: profile)){ image in
+                                                image
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fill)
+                                            } placeholder: {
+                                                Image(systemName: "photo.fill")
+                                            }
+                                            .frame(width: 70, height: 70)
+                                            .cornerRadius(70 / 2)
+                                            
+                                        }
+                                        .clipped()
                                     Rectangle()
                                         .fill(Color.clear)
                                         .frame(height: 10)
                                     Text("Selamat datang")
                                         .font(.caption2)
-                                    Text("I Putu Rama Anadya")
+                                    Text(name)
                                         .font(.footnote)
                                 }
                                 .offset(y: 50)

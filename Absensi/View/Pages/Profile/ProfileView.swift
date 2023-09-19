@@ -8,6 +8,16 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @State private var logout = false
+    
+    private let name = UserSettings.shared.getName() ?? ""
+    private let profile = UserSettings.shared.getProfile() ?? ""
+    private let role = UserSettings.shared.getRole() ?? ""
+    private let position = UserSettings.shared.getPosition() ?? ""
+    private let nip = UserSettings.shared.getUsername() ?? ""
+    
+    
     var body: some View {
         ScrollView {
             // List utama
@@ -15,15 +25,27 @@ struct ProfileView: View {
                 HStack(spacing: 20) {
                     Circle()
                         .frame(width: 60, height: 60, alignment: .center)
+                        .overlay {
+                            AsyncImage(url: URL(string: profile)){ image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                            } placeholder: {
+                                Image(systemName: "photo.fill")
+                            }
+                            .frame(width: 60, height: 60)
+                            .cornerRadius(60 / 2)
+                        }
+                        .clipped()
                     VStack(alignment: .leading, spacing: 10) {
-                        Text("Nama")
+                        Text(name)
                             .fontWeight(.bold)
-                        Text("NIP")
+                        Text(nip)
                             .font(.caption)
                             .foregroundColor(.gray)
-                        Text("Jabatan")
+                        Text(position)
                             .fontWeight(.bold)
-                        Text("Bidang")
+                        Text(role)
                             .font(.caption)
                             .foregroundColor(.gray)
                     }
@@ -68,16 +90,17 @@ struct ProfileView: View {
                     subtitle: "Versi aplikasi 1.0.0",
                     iconName: "info.circle")
             })
-            NavigationLink(destination: {
-                LoginView()
-                    .navigationBarBackButtonHidden()
-                    .navigationBarHidden(true)
+            
+            Button(action: {
+                UserSettings.shared.reset()
+                logout = true
             }, label: {
                 ProfileMenu(
                     title: "Keluar",
-                    subtitle: "Keluar sebagai Rama Anadya",
+                    subtitle: "Keluar sebagai \(name)",
                     iconName: "info.circle")
             })
+            .navigationDestination(isPresented: $logout, destination: {LoginView().navigationBarHidden(true)})
             // Akhir Profile Menu
             
         }
@@ -116,6 +139,7 @@ struct ProfileMenu: View {
                     Text(subtitle)
                         .font(.caption)
                         .foregroundColor(.gray)
+                        .lineLimit(1)
                 }
                 Spacer()
                 Image(systemName: "chevron.right")
