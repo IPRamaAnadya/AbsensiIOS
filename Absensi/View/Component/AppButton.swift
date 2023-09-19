@@ -11,9 +11,11 @@ struct AppButton: View {
     
     let title: String
     let action: () -> Void
+    @Binding var showLoading: Bool
     
-    init(title: String, action: @escaping () -> Void) {
+    init(title: String, showLoading: Binding<Bool>, action: @escaping () -> Void) {
         self.title = title
+        self._showLoading = showLoading
         self.action = action
     }
     
@@ -23,15 +25,21 @@ struct AppButton: View {
             Button(
                 action: action,
                 label: {
-                    Text(title)
-                        .font(.callout)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding([.bottom, .top], 12)
-                        .background(Color("primary"))
-                        .cornerRadius(10)
+                    HStack(spacing: 10) {
+                        if(showLoading) {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                        }
+                        Text(title)
+                            .font(.callout)
+                            .fontWeight(.bold)
                         .shadow(color: Color.red.opacity(0.35), radius: 20, x: -1, y: 10)
+                    }
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding([.bottom, .top], 12)
+                    .background(Color("primary"))
+                    .cornerRadius(10)
                     
                 }
             )
@@ -42,6 +50,7 @@ struct AppButton: View {
 
 struct AppButton_Previews: PreviewProvider {
     static var previews: some View {
-        AppButton(title: "Test", action: {})
+        @State var showLoading = true
+        AppButton(title: "Test",showLoading: $showLoading, action: {})
     }
 }
