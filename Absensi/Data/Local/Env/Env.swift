@@ -15,4 +15,8 @@ struct Env {
     
     //PATH
     static let loginPath = "/login"
+    static let notificationPath = "/riwayat-notifikasi"
+    
+    //STATIC VALUE
+    static let perpage = 10
 }

@@ -24,10 +24,16 @@ class UserSettings {
     
     func setAuthToken(token: String) {
         UserDefaults.standard.set(token, forKey: auth_key)
+        print("Token Autentikasi disimpan")
     }
     
     func getAuthToken() -> String? {
-        return UserDefaults.standard.object(forKey: auth_key) as? String
+        guard let data = UserDefaults.standard.object(forKey: auth_key) as? String, data != "" else {
+            print("Gagal mendapatkan token autentikasi")
+            return nil
+        }
+        print("Mengambil token autentikasi")
+        return data
     }
     
     func setCredential(username: String, password: String) {

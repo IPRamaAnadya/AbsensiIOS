@@ -26,18 +26,61 @@ class NetworkRepository {
                 switch result {
                 case .success(let data):
                     completion(true)
-                    print("Login Success")
+                    print("Login Berhasil")
                     guard let jsonData = data as? Data else {
-                        print("json is not Data")
+                        print("response bukan Data")
                         return
                     }
                     let loginData = Helpers.shared.ParsingJsonToModel(LoginResponse.self, from: jsonData)
+                    UserSettings.shared.setAuthToken(token: loginData?.credential?.accessToken ?? "")
                     UserSettings.shared.setIdentities(name: loginData?.credential?.user?.name ?? "", role: loginData?.credential?.user?.skpd ?? "", profile: loginData?.credential?.user?.wajahURL ?? "", position: loginData?.credential?.user?.jabatan ?? "")
                     
                 case .failure(_):
                     completion(false)
-                    print("Login Failed")
+                    print("Login Gagal")
                 }
             }
     }
+    
+    func fetchNotification(
+        page: Int,
+        perpage: Int,
+        completion: @escaping (_ result: AppResult<NotificationResponse?>) -> Void
+    ) {
+        
+        let authToken = UserSettings.shared.getAuthToken() ?? ""
+        
+        let headers: [String: String] = [
+            "Authorization": "Bearer \(authToken)"
+        ]
+        
+        let params: [String: String] = [
+            "per_page": perpage.description,
+            "page": page.description
+        ]
+        
+        ServerAccessor.shared.get(
+            endpoint: Env.apiURL+Env.notificationPath,
+            to: NotificationResponse.self,
+            headers: headers,
+            params: params
+        ) { result in
+            switch result {
+            case .success(let data):
+                print("Berhasil mendapatkan data notifikasi")
+                completion(.success(data))
+            case .failure(let failure):
+                print("Gagal mendapatkan data notifikasi")
+                print(failure)
+                completion(.failure(failure))
+            }
+        }
+    }
 }
+
+enum AppResult<Model: Codable> {
+    case success(Model)
+    case failure(Error)
+}
+
+

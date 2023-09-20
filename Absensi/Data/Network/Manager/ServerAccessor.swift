@@ -103,16 +103,23 @@ class ServerAccessor {
     
     
 
-    func get(
+    func get<T: Decodable>(
         endpoint: String,
+        to type: T.Type,
         headers: [String: String] = [:],
         params: [String: String] = [:],
-        completion: @escaping (Result<Any, Error>) -> Void)
+        completion: @escaping (AppResult<T>) -> Void)
     {
         
         let httpHeaders = HTTPHeaders(headers)
         AF.request(endpoint, parameters: params, headers: httpHeaders)
-            .responseJSON { response in
+            .responseDecodable(of: type) { response in
+                
+                print("\n\nREQUEST::GET")
+                print("Endpoint: \(response.request?.description ?? "")")
+                print("\(response.response?.headers.description ?? "")")
+                print("\n\nEND REQUEST")
+                
                 switch response.result {
                 case .success(let data):
                     completion(.success(data))
