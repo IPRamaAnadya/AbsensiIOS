@@ -201,9 +201,13 @@ struct HomeView: View {
                                     RoundedRectangle(cornerRadius: 15)
                                         .stroke(Color.gray.opacity(0.05), lineWidth: 1.5)
                                 }
-                                .shadow(color: .gray.opacity(0.1), radius: 5, x: -1, y: 5)                            })
-                            
+                                .shadow(color: .gray.opacity(0.1), radius: 5, x: -1, y: 5)
+                            })
                         }
+                        Text("")
+                            .onAppear {
+                                vm.fetchEvent()
+                            }
                     }
                     .frame(maxWidth: .infinity)
                     .frame(maxHeight: .infinity, alignment: .top)

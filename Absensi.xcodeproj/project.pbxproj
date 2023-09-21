@@ -225,8 +225,6 @@
 		07A5D6DE2AB9628B007241E2 /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				07A5D6EA2AB9675C007241E2 /* Env */,
-				07A5D6E02AB962B9007241E2 /* UserSettings */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -397,6 +395,8 @@
 		07F66DCE2AB2E901003DF9FB /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				07A5D6EA2AB9675C007241E2 /* Env */,
+				07A5D6E02AB962B9007241E2 /* UserSettings */,
 				07A5D6F72AB97936007241E2 /* Helpers */,
 				079538E32AB57E4D0019C980 /* Animation */,
 				07F66DBD2AB2E8A5003DF9FB /* AbsensiApp.swift */,

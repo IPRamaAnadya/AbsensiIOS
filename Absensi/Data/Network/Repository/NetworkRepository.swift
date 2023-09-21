@@ -13,7 +13,11 @@ class NetworkRepository {
     
     private init() {}
     
-    func login(username: String, password: String, completion: @escaping (_ loginState: Bool) -> Void){
+    func login(
+        username: String,
+        password: String,
+        completion: @escaping (_ loginState: Bool) -> Void)
+    {
         
         let formData = [
             "username": username,
@@ -76,6 +80,72 @@ class NetworkRepository {
             }
         }
     }
+    
+    func fetchEvent(
+        page: Int,
+        perpage: Int,
+        completion: @escaping (_ result: AppResult<NotificationResponse?>) -> Void
+    ) {
+        let authToken = UserSettings.shared.getAuthToken() ?? ""
+        let headers = [
+            "Authorization": authToken
+        ]
+        
+        let params = [
+            "page": page.description,
+            "per_page": perpage.description
+        ]
+        
+        ServerAccessor.shared.get(endpoint: Env.apiURL + Env.eventPath,
+                                  to: NotificationResponse.self,
+                                  headers: headers,
+                                  params: params
+        ) { result in
+            switch result {
+            case .success(let data):
+                print("Berhasil mendapatkan data acara")
+                completion(.success(data))
+            case .failure(let failure):
+                print("Gagal mendapatkan data acara")
+                print(failure)
+                completion(.failure(failure))
+            }
+        }
+    }
+    
+    func fetchHistory(
+        page: Int,
+        perpage: Int,
+        completion: @escaping (_ result: AppResult<NotificationResponse?>) -> Void
+    ) {
+        let authToken = UserSettings.shared.getAuthToken() ?? ""
+        let headers = [
+            "Authorization": authToken
+        ]
+        
+        let params = [
+            "page": page.description,
+            "per_page": perpage.description
+        ]
+        
+        ServerAccessor.shared.get(endpoint: Env.apiURL + Env.historyPath,
+                                  to: NotificationResponse.self,
+                                  headers: headers,
+                                  params: params
+        ) { result in
+            switch result {
+            case .success(let data):
+                print("Berhasil mendapatkan data riwayat absen")
+                completion(.success(data))
+            case .failure(let failure):
+                print("Gagal mendapatkan data riwayat absen")
+                print(failure)
+                completion(.failure(failure))
+            }
+        }
+    }
+    
+    
 }
 
 enum AppResult<Model: Codable> {
