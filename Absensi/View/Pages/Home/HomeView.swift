@@ -11,6 +11,8 @@ struct HomeView: View {
     
     @State var showBottomSheet = false
     
+    @ObservedObject private var vm = HomeViewModel()
+    
     private let name = UserSettings.shared.getName() ?? ""
     private let profile = UserSettings.shared.getProfile() ?? ""
     
@@ -108,22 +110,46 @@ struct HomeView: View {
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .foregroundColor(.white)
-                        .background(Color("primary"))
+                        .foregroundColor(vm.displayTodayEvent ? .white : .black)
+                        .background(vm.displayTodayEvent ? Color("primary") : Color.white)
                         .cornerRadius(10)
-                    Text("Akan datang")
+                        .overlay {
+                            if vm.displayTodayEvent {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color("primary").opacity(0.1), lineWidth: 0.5)
+                            }
+                        }
+                        .shadow (
+                            color: vm.displayTodayEvent ? .white : .gray.opacity(0.1),
+                            radius: vm.displayTodayEvent ? 0 : 5,
+                            x: vm.displayTodayEvent ? 0 : -1,
+                            y: vm.displayTodayEvent ? 0 : 5)
+                        .onTapGesture {
+                            vm.showTodayEvent()
+                        }
+                    Text("Akan Datang")
                         .font(.footnote)
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .foregroundColor(Color.black)
-                        .background(Color.white)
+                        .foregroundColor(!vm.displayTodayEvent ? .white : .black)
+                        .background(!vm.displayTodayEvent ? Color("primary") : Color.white)
                         .cornerRadius(10)
                         .overlay {
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color("primary").opacity(0.1), lineWidth: 0.5)
+                            if !vm.displayTodayEvent {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color("primary").opacity(0.1), lineWidth: 0.5)
+                            }
                         }
-                        .shadow(color: .gray.opacity(0.1), radius: 5, x: -1, y: 5)
+                        .shadow (
+                            color: !vm.displayTodayEvent ? .white : .gray.opacity(0.1),
+                            radius: !vm.displayTodayEvent ? 0 : 5,
+                            x: !vm.displayTodayEvent ? 0 : -1,
+                            y: !vm.displayTodayEvent ? 0 : 5)
+                        .onTapGesture {
+                            vm.showNextDayEvent()
+                        }
+                    
                     Spacer(minLength: 20)
                 }
                 

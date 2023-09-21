@@ -37,6 +37,7 @@
 		07A5D6F62AB978E1007241E2 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6F52AB978E1007241E2 /* LoginResponse.swift */; };
 		07A5D6F92AB97953007241E2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6F82AB97953007241E2 /* Helpers.swift */; };
 		07A5D6FC2AB987E3007241E2 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6FB2AB987E3007241E2 /* SplashViewModel.swift */; };
+		07AAAB172ABBD67E004E93E0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AAAB162ABBD67E004E93E0 /* HomeViewModel.swift */; };
 		07F66DBE2AB2E8A5003DF9FB /* AbsensiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F66DBD2AB2E8A5003DF9FB /* AbsensiApp.swift */; };
 		07F66DC02AB2E8A5003DF9FB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F66DBF2AB2E8A5003DF9FB /* MainView.swift */; };
 		07F66DC22AB2E8A7003DF9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07F66DC12AB2E8A7003DF9FB /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		07A5D6F52AB978E1007241E2 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		07A5D6F82AB97953007241E2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		07A5D6FB2AB987E3007241E2 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		07AAAB162ABBD67E004E93E0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		07F66DBA2AB2E8A5003DF9FB /* Absensi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Absensi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F66DBD2AB2E8A5003DF9FB /* AbsensiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsensiApp.swift; sourceTree = "<group>"; };
 		07F66DBF2AB2E8A5003DF9FB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -312,6 +314,14 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		07AAAB152ABBD65F004E93E0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				07AAAB162ABBD67E004E93E0 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		07F66DB12AB2E8A5003DF9FB = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +375,7 @@
 		07F66DCC2AB2E8DF003DF9FB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				07AAAB152ABBD65F004E93E0 /* Home */,
 				079D02902ABAAAFF00787F52 /* Notification */,
 				07A5D6FA2AB987D3007241E2 /* Splash */,
 				07A5D6E32AB96513007241E2 /* Login */,
@@ -585,6 +596,7 @@
 				078109552AB48CA8005B4F1B /* HistoryView.swift in Sources */,
 				07F66DD32AB2EA5C003DF9FB /* SplashView.swift in Sources */,
 				07F66DE12AB309F1003DF9FB /* DashboardView.swift in Sources */,
+				07AAAB172ABBD67E004E93E0 /* HomeViewModel.swift in Sources */,
 				079D028B2ABAA97C00787F52 /* Notification.swift in Sources */,
 				07F66DD82AB30621003DF9FB /* AppTextField.swift in Sources */,
 				078109492AB42C63005B4F1B /* AboutView.swift in Sources */,
