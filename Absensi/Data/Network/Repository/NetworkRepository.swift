@@ -88,7 +88,7 @@ class NetworkRepository {
     ) {
         let authToken = UserSettings.shared.getAuthToken() ?? ""
         let headers = [
-            "Authorization": authToken
+            "Authorization": "Bearer \(authToken)"
         ]
         
         let params = [
@@ -103,10 +103,8 @@ class NetworkRepository {
         ) { result in
             switch result {
             case .success(let data):
-                print("Berhasil mendapatkan data acara")
                 completion(.success(data))
             case .failure(let failure):
-                print("Gagal mendapatkan data acara")
                 print(failure)
                 completion(.failure(failure))
             }
@@ -116,11 +114,11 @@ class NetworkRepository {
     func fetchHistory(
         page: Int,
         perpage: Int,
-        completion: @escaping (_ result: AppResult<NotificationResponse?>) -> Void
+        completion: @escaping (_ result: AppResult<HistoriesResponse?>) -> Void
     ) {
         let authToken = UserSettings.shared.getAuthToken() ?? ""
         let headers = [
-            "Authorization": authToken
+            "Authorization": "Bearer \(authToken)"
         ]
         
         let params = [
@@ -129,16 +127,14 @@ class NetworkRepository {
         ]
         
         ServerAccessor.shared.get(endpoint: Env.apiURL + Env.historyPath,
-                                  to: NotificationResponse.self,
+                                  to: HistoriesResponse.self,
                                   headers: headers,
                                   params: params
         ) { result in
             switch result {
             case .success(let data):
-                print("Berhasil mendapatkan data riwayat absen")
                 completion(.success(data))
             case .failure(let failure):
-                print("Gagal mendapatkan data riwayat absen")
                 print(failure)
                 completion(.failure(failure))
             }

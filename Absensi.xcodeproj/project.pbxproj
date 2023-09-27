@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0708B87E2AC3BB1A00FB451B /* HistoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B87D2AC3BB1A00FB451B /* HistoriesResponse.swift */; };
+		0708B8802AC3BB5C00FB451B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B87F2AC3BB5C00FB451B /* Event.swift */; };
+		0708B8832AC3BC5200FB451B /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B8822AC3BC5200FB451B /* HistoryViewModel.swift */; };
+		0708B8852AC3BCAF00FB451B /* HistoriesWithSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B8842AC3BCAF00FB451B /* HistoriesWithSection.swift */; };
 		078109492AB42C63005B4F1B /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078109482AB42C63005B4F1B /* AboutView.swift */; };
 		0781094C2AB4831A005B4F1B /* UpdatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0781094B2AB4831A005B4F1B /* UpdatePasswordView.swift */; };
 		0781094F2AB48A02005B4F1B /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0781094E2AB48A02005B4F1B /* CreatePasswordView.swift */; };
@@ -56,6 +60,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0708B87D2AC3BB1A00FB451B /* HistoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoriesResponse.swift; sourceTree = "<group>"; };
+		0708B87F2AC3BB5C00FB451B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0708B8822AC3BC5200FB451B /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		0708B8842AC3BCAF00FB451B /* HistoriesWithSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoriesWithSection.swift; sourceTree = "<group>"; };
 		078109482AB42C63005B4F1B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		0781094B2AB4831A005B4F1B /* UpdatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordView.swift; sourceTree = "<group>"; };
 		0781094E2AB48A02005B4F1B /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
@@ -116,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0708B8812AC3BC4000FB451B /* History */ = {
+			isa = PBXGroup;
+			children = (
+				0708B8822AC3BC5200FB451B /* HistoryViewModel.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		078109472AB42C58005B4F1B /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				079D02952ABAB02D00787F52 /* NotificationWithSection.swift */,
+				0708B8842AC3BCAF00FB451B /* HistoriesWithSection.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -278,13 +295,14 @@
 			path = Env;
 			sourceTree = "<group>";
 		};
-		07A5D6ED2AB97731007241E2 /* User */ = {
+		07A5D6ED2AB97731007241E2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				07A5D6EE2AB97830007241E2 /* Credential.swift */,
 				07A5D6F02AB97854007241E2 /* User.swift */,
+				0708B87F2AC3BB5C00FB451B /* Event.swift */,
 			);
-			path = User;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		07A5D6F42AB978CA007241E2 /* Response */ = {
@@ -292,6 +310,7 @@
 			children = (
 				07A5D6F52AB978E1007241E2 /* LoginResponse.swift */,
 				079D028E2ABAA9D700787F52 /* NotificationResponse.swift */,
+				0708B87D2AC3BB1A00FB451B /* HistoriesResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -342,8 +361,8 @@
 				07F66DCE2AB2E901003DF9FB /* Other */,
 				07A5D6D82AB956E3007241E2 /* Data */,
 				07F66DCB2AB2E8B8003DF9FB /* Model */,
-				07F66DCC2AB2E8DF003DF9FB /* ViewModel */,
 				07F66DCD2AB2E8EA003DF9FB /* View */,
+				07F66DCC2AB2E8DF003DF9FB /* ViewModel */,
 				07F66DC32AB2E8A7003DF9FB /* Preview Content */,
 			);
 			path = Absensi;
@@ -362,7 +381,7 @@
 			children = (
 				079D02942ABAB01200787F52 /* Interface */,
 				07A5D6F42AB978CA007241E2 /* Response */,
-				07A5D6ED2AB97731007241E2 /* User */,
+				07A5D6ED2AB97731007241E2 /* Main */,
 				07A5D6F22AB9788B007241E2 /* Meta.swift */,
 				079D028A2ABAA97C00787F52 /* Notification.swift */,
 				079D028C2ABAA98600787F52 /* Pagination.swift */,
@@ -373,6 +392,7 @@
 		07F66DCC2AB2E8DF003DF9FB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0708B8812AC3BC4000FB451B /* History */,
 				07AAAB152ABBD65F004E93E0 /* Home */,
 				079D02902ABAAAFF00787F52 /* Notification */,
 				07A5D6FA2AB987D3007241E2 /* Splash */,
@@ -575,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07A5D6E92AB9663A007241E2 /* NetworkRepository.swift in Sources */,
+				0708B8802AC3BB5C00FB451B /* Event.swift in Sources */,
 				07F66DC02AB2E8A5003DF9FB /* MainView.swift in Sources */,
 				079D02932ABAAB3C00787F52 /* NotificationViewModel.swift in Sources */,
 				07F66DEA2AB32129003DF9FB /* MapView.swift in Sources */,
@@ -589,11 +610,13 @@
 				07A5D6FC2AB987E3007241E2 /* SplashViewModel.swift in Sources */,
 				07A5D6F92AB97953007241E2 /* Helpers.swift in Sources */,
 				07A5D6E52AB96528007241E2 /* LoginViewModel.swift in Sources */,
+				0708B87E2AC3BB1A00FB451B /* HistoriesResponse.swift in Sources */,
 				07F66DE52AB30C60003DF9FB /* HomeView.swift in Sources */,
 				07A5D6F32AB9788B007241E2 /* Meta.swift in Sources */,
 				07A5D6F12AB97854007241E2 /* User.swift in Sources */,
 				0781094F2AB48A02005B4F1B /* CreatePasswordView.swift in Sources */,
 				078109552AB48CA8005B4F1B /* HistoryView.swift in Sources */,
+				0708B8852AC3BCAF00FB451B /* HistoriesWithSection.swift in Sources */,
 				07F66DD32AB2EA5C003DF9FB /* SplashView.swift in Sources */,
 				07F66DE12AB309F1003DF9FB /* DashboardView.swift in Sources */,
 				07AAAB172ABBD67E004E93E0 /* HomeViewModel.swift in Sources */,
@@ -607,6 +630,7 @@
 				07F66DDA2AB30634003DF9FB /* AppSecureField.swift in Sources */,
 				079D028F2ABAA9D700787F52 /* NotificationResponse.swift in Sources */,
 				07A5D6EF2AB97830007241E2 /* Credential.swift in Sources */,
+				0708B8832AC3BC5200FB451B /* HistoryViewModel.swift in Sources */,
 				079D02962ABAB02D00787F52 /* NotificationWithSection.swift in Sources */,
 				0781094C2AB4831A005B4F1B /* UpdatePasswordView.swift in Sources */,
 				07F66DE72AB30CA4003DF9FB /* ProfileView.swift in Sources */,

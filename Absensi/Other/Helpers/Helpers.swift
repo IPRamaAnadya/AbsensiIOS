@@ -25,6 +25,13 @@ class Helpers {
         return DateFormatter.localizedString(from: date(fromEpoch: epoch), dateStyle: .medium, timeStyle: .none)
     }
     
+    func timeFormatter(from epoch: Int) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let date = date(fromEpoch: epoch)
+        return dateFormatter.string(from: date)
+    }
+    
     func ParsingJsonToModel<T: Decodable>(_ type: T.Type, from json: Data) -> T? {
         let decoder = JSONDecoder()
         do {
@@ -79,6 +86,49 @@ class Helpers {
         }
         
         return notificationWithSections
+    }
+    
+    func parseHistoriesResponse(_ historiesResponse: HistoriesResponse) -> [HistoriesWithSection] {
+        var historiesWithSections = [HistoriesWithSection]()
+        
+        // Check if riwayatNotifikasi exists and is not empty
+        if let histories = historiesResponse.riwayatAbsensi, !histories.isEmpty {
+            // Create a dictionary to group notifications by date
+            var groupedHistories = [String: [EventEntity]]()
+            
+            for history in histories {
+                if let createdAt = history.tanggal {
+                    // Convert createdAt to a human-readable date string as the section
+                    let section = DateFormatter.localizedString(from: date(fromEpoch: createdAt), dateStyle: .medium, timeStyle: .none)
+                    
+                    // Append the notification to the corresponding section
+                    if var sectionHistories = groupedHistories[section] {
+                        sectionHistories.append(history)
+                        groupedHistories[section] = sectionHistories
+                    } else {
+                        groupedHistories[section] = [history]
+                    }
+                }
+            }
+            
+            // Convert the grouped notifications into NotificationWithSection objects
+            historiesWithSections = groupedHistories.map { (section, histories) in
+                return HistoriesWithSection(section: section, histories: histories)
+            }
+            
+            // Sort the notificationWithSections array based on section dates (newer to older)
+            historiesWithSections.sort { (lhs, rhs) in
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = .medium
+                dateFormatter.timeStyle = .none
+                if let date1 = dateFormatter.date(from: lhs.section), let date2 = dateFormatter.date(from: rhs.section) {
+                    return date1 > date2
+                }
+                return false
+            }
+        }
+        
+        return historiesWithSections
     }
     
 }

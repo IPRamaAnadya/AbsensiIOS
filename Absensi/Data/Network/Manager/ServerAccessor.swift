@@ -118,7 +118,13 @@ class ServerAccessor {
                 print("\n\nREQUEST::GET")
                 print("Endpoint: \(response.request?.description ?? "")")
                 print("\(response.response?.headers.description ?? "")")
-                print("\n\nEND REQUEST")
+                print("RESPONSE STATUS CODE : \(response.response?.statusCode.description ?? "")")
+                print("END REQUEST\n\n")
+                
+                if response.response?.statusCode != 200 {
+                    completion(.failure(response.error ?? NSError(domain: "Request failed", code: response.response?.statusCode ?? -100)))
+                    return
+                }
                 
                 switch response.result {
                 case .success(let data):
