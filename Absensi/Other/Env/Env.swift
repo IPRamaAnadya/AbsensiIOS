@@ -10,9 +10,11 @@ import Foundation
 
 struct Env {
     
-    // URL
+    static let baseURL = "http://103.183.75.217"
+ 
 //    static let apiURL = "https://aum.tabanankab.go.id/api"
-    static let apiURL = "http://103.183.75.217/api"
+    // PRODUCTION
+    static let apiURL = "\(baseURL)/api"
     
     //PATH
     static let loginPath = "/login"
