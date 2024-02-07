@@ -7,16 +7,37 @@
 
 import SwiftUI
 
+class ProfileViewModel: ObservableObject {
+    
+    @Published var callCenterResponse: CallCenterResponse?
+    
+    func callCenter(){
+        NetworkRepository.shared.callCenter { result in
+            switch result {
+            case .success(let model):
+                guard let model = model else {
+                    return
+                }
+                self.callCenterResponse = model
+            case .failure(_):
+                return
+            }
+        }
+    }
+    
+}
+
+
 struct ProfileView: View {
     
     @State private var logout = false
-    
+    @ObservedObject private var vm = ProfileViewModel()
     private let name = UserSettings.shared.getName() ?? ""
     private let profile = UserSettings.shared.getProfile() ?? ""
     private let role = UserSettings.shared.getRole() ?? ""
     private let position = UserSettings.shared.getPosition() ?? ""
     private let nip = UserSettings.shared.getUsername() ?? ""
-    
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     
     var body: some View {
         ScrollView {
@@ -77,17 +98,21 @@ struct ProfileView: View {
                     subtitle: "Ubah kata sandi anda",
                     iconName: "repeat")
             })
-            ProfileMenu(
-                title: "Bantuan",
-                subtitle: "Bantuan aplikasi",
-                iconName: "questionmark.circle")
+            
+            Link(destination: URL(string: vm.callCenterResponse?.callCenter?.url ?? "https://tabanankab.go.id/")!,
+                 label: {
+                ProfileMenu(
+                    title: "Bantuan",
+                    subtitle: "Bantuan aplikasi",
+                    iconName: "questionmark.circle")
+            })
             
             NavigationLink(destination: {
                 AboutView()
             }, label: {
                 ProfileMenu(
                     title: "Tentang Aplikasi",
-                    subtitle: "Versi aplikasi 1.0.0",
+                    subtitle: "Versi aplikasi \(appVersion ?? "")",
                     iconName: "info.circle")
             })
             
@@ -105,6 +130,13 @@ struct ProfileView: View {
             
         }
         .background(Color.gray.opacity(0.01))
+        .onAppear {
+            Helpers.shared.analyticsLog(itemID: "Profile", itemName: "Berada di halaman Profil", contentType: .automatic)
+            vm.callCenter()
+        }
+        .onDisappear {
+            Helpers.shared.analyticsLog(itemID: "Profile", itemName: "keluar dari halaman Profil", contentType: .automatic)
+        }
     }
 }
 

@@ -13,11 +13,13 @@ struct AppTextField: View {
     
     let iconName: String
     let hint: String
+    let keyboardType: UIKeyboardType
     
-    init(username: Binding<String>, iconName: String, hint: String = "") {
+    init(username: Binding<String>, iconName: String, hint: String = "", keyboardType: UIKeyboardType = .default) {
         self._username = username
         self.iconName = iconName
         self.hint = hint
+        self.keyboardType = keyboardType
     }
     
     var body: some View {
@@ -34,6 +36,7 @@ struct AppTextField: View {
                     .frame(minWidth: 0, maxWidth: 40)
                 TextField (hint, text: $username)
                     .frame(height: 45)
+                    .keyboardType(keyboardType)
             }
             .padding([.top,.bottom], 2)
             .padding(.leading, 5)

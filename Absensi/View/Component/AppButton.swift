@@ -29,11 +29,13 @@ struct AppButton: View {
                         if(showLoading) {
                             ProgressView()
                                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                        } else {
+                            Text(title)
+                                .font(.callout)
+                                .fontWeight(.bold)
+                            .shadow(color: Color.red.opacity(0.35), radius: 20, x: -1, y: 10)
                         }
-                        Text(title)
-                            .font(.callout)
-                            .fontWeight(.bold)
-                        .shadow(color: Color.red.opacity(0.35), radius: 20, x: -1, y: 10)
+                        
                     }
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)

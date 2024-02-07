@@ -11,13 +11,24 @@ import Foundation
 struct Env {
     
     // URL
-    static let apiURL = "https://aum.tabanankab.go.id/api"
+//    static let apiURL = "https://aum.tabanankab.go.id/api"
+    static let apiURL = "http://103.183.75.217/api"
     
     //PATH
     static let loginPath = "/login"
     static let notificationPath = "/riwayat-notifikasi"
     static let eventPath = "/acara"
     static let historyPath = "/riwayat-absensi"
+    static let changePassword = "/ubah-password"
+    static let absentIN = "/absen-masuk"
+    static let absentConditionIN = "/cek-kondisi-absen-masuk"
+    static let absentOUT = "/absen-keluar"
+    static let absentConditionOUT = "/cek-kondisi-absen-keluar"
+    static let faceRegister = "/register-wajah"
+    static let callCenter = "/call-center"
+    static let forgotPassword = "/forgot-password-whatsapp"
+    static let fcmToken = "/fcm-token"
+    static let register = "/register"
     
     //STATIC VALUE
     static let perpage = 10

@@ -5,8 +5,8 @@
 //  Created by I putu Rama anadya on 19/09/23.
 //
 
-import Foundation
-
+import SwiftUI
+import FirebaseAnalytics
 
 class Helpers {
     
@@ -37,10 +37,10 @@ class Helpers {
         do {
             let data = try decoder.decode(type, from: json)
             
-            print("Success parsing Json to model")
+            print("Berhasil parsing Json ke model \(T.self)\n")
             return data
         } catch {
-            print("Failed parsing Json to model")
+            print("Gagal parsing Json ke model\n")
             return nil
         }
     }
@@ -94,7 +94,7 @@ class Helpers {
         // Check if riwayatNotifikasi exists and is not empty
         if let histories = historiesResponse.riwayatAbsensi, !histories.isEmpty {
             // Create a dictionary to group notifications by date
-            var groupedHistories = [String: [EventEntity]]()
+            var groupedHistories = [String: [HistoryEntity]]()
             
             for history in histories {
                 if let createdAt = history.tanggal {
@@ -131,4 +131,41 @@ class Helpers {
         return historiesWithSections
     }
     
+    func parseEventStatusColor(from status: Int?) -> Color {
+        guard let status = status else {
+            return Color(red: 201, green: 201, blue: 201)
+        }
+        if status == 1 {
+            return Color(red: 30, green: 215, blue: 96)
+        }
+        if status == 2 {
+            return Color(red: 30, green: 215, blue: 96)
+        }
+        if status == 3 {
+            return Color(red: 246, green: 146, blue: 0)
+        }
+        if status == 4 {
+            return Color(red: 255, green: 0, blue: 0)
+        }
+        
+        return Color(red: 201, green: 201, blue: 201)
+    }
+    
+    func analyticsLog(itemID: String, itemName: String, contentType: AppAnalyticContentType) {
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+          AnalyticsParameterItemID: "\(itemID)" as NSObject,
+          AnalyticsParameterItemName: itemName as NSObject,
+          AnalyticsParameterContentType: contentType.rawValue as NSObject,
+        ])
+    }
+    
+}
+
+enum AppAnalyticContentType: String {
+    case automatic = "automatic"
+    case button = "button"
+    case bottomBar = "bottom_bar"
+    case iconButton = "icon_button"
+    case card = "card"
+    case scroll = "scroll"
 }

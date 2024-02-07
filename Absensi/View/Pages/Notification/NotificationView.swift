@@ -77,6 +77,7 @@ struct NotificationView: View {
         }
         .navigationTitle("Notifikasi")
         .onAppear {
+            Helpers.shared.analyticsLog(itemID: "Notifications", itemName: "Berada di halaman notifikasi", contentType: .automatic)
             vm.fetchNotification()
         }
     }

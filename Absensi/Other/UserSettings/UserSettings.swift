@@ -21,18 +21,33 @@ class UserSettings {
     private let role_key = "role_key"
     private let profile_key = "profile_key"
     private let position_key = "position_key"
+    private let fcm_token_key = "fcm_token_key"
     
     func setAuthToken(token: String) {
         UserDefaults.standard.set(token, forKey: auth_key)
-        print("Token Autentikasi disimpan")
+        print("Token Autentikasi disimpan\n")
+    }
+    
+    func setFCMToken(token: String) {
+        UserDefaults.standard.set(token, forKey: fcm_token_key)
+        print("Token FCM disimpan\n")
+    }
+    
+    func getFCMToken() -> String? {
+        guard let data = UserDefaults.standard.object(forKey: fcm_token_key) as? String, data != "" else {
+            print("Gagal mendapatkan token FCM\n")
+            return nil
+        }
+        print("Mengambil token FCM\n")
+        return data
     }
     
     func getAuthToken() -> String? {
         guard let data = UserDefaults.standard.object(forKey: auth_key) as? String, data != "" else {
-            print("Gagal mendapatkan token autentikasi")
+            print("Gagal mendapatkan token autentikasi\n")
             return nil
         }
-        print("Mengambil token autentikasi")
+        print("Mengambil token autentikasi\n")
         return data
     }
     
@@ -55,7 +70,7 @@ class UserSettings {
         UserDefaults.standard.set(profile, forKey: profile_key)
         UserDefaults.standard.set(position, forKey: position_key)
         
-        print("Save user identities")
+        print("Save user identities\n")
     }
     
     func getName() -> String? {

@@ -11,9 +11,13 @@ class HistoryViewModel: ObservableObject {
     
     @Published var loading = false
     @Published var histories = [HistoriesWithSection]()
+    @Published var event: EventEntity?
+    @Published var showSheet = false
     
     private var tempHistories = HistoriesResponse(meta: nil, riwayatAbsensi: nil, pagination: nil)
     private var page = 1
+    
+    
     
     @MainActor
     func fetchHistories() {
@@ -48,6 +52,28 @@ class HistoryViewModel: ObservableObject {
                     self.histories = Helpers.shared.parseHistoriesResponse(self.tempHistories)
                 }
                 
+            case .failure(_):
+                self.loading = false
+            }
+        }
+    }
+    
+    @MainActor
+    func fetchSingleEvent(id: Int) {
+        loading = true
+        
+        NetworkRepository.shared.fetchSingleEvent(id: id) { result in
+            switch result {
+            case .success(let model):
+                guard let model = model, let event = model.acara else {
+                    print("Detail acara kosong")
+                    self.loading = false
+                    return
+                }
+                self.event = event
+                self.loading = false
+                self.showSheet.toggle()
+                Helpers.shared.analyticsLog(itemID: "History", itemName: "Melihat detail history", contentType: .automatic)
             case .failure(_):
                 self.loading = false
             }

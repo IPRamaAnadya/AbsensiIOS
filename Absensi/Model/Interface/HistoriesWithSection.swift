@@ -10,5 +10,5 @@ import Foundation
 struct HistoriesWithSection: Codable,Identifiable {
     var id = UUID()
     let section: String
-    let histories: [EventEntity]
+    let histories: [HistoryEntity]
 }

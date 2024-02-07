@@ -17,7 +17,7 @@ struct SplashView: View {
                 Spacer()
                 Image("app_logo")
                 Spacer()
-                Text("Develop by Maiharta")
+                Text("Powered by Maiharta")
                     .font(.caption2)
                     .foregroundColor(.white)
                     .padding()
@@ -28,6 +28,7 @@ struct SplashView: View {
             )
         }
         .onAppear {
+            Helpers.shared.analyticsLog(itemID: "Splash", itemName: "Aplikasi baru saja dibuka", contentType: .automatic)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                 viewModel.getNextPage()
             }
@@ -40,6 +41,14 @@ struct SplashView: View {
             LoginView()
                 .navigationBarHidden(true)
         })
+        .navigationDestination(isPresented: $viewModel.goToCreatePassword) {
+            CreatePasswordView(faceRegisterState: viewModel.faceRegisterState)
+                .navigationBarHidden(true)
+        }
+        .navigationDestination(isPresented: $viewModel.goToFaceRegister) {
+            FaceRegisterView()
+                .navigationBarHidden(true)
+        }
     }
 }
 

@@ -8,9 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		0708B87E2AC3BB1A00FB451B /* HistoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B87D2AC3BB1A00FB451B /* HistoriesResponse.swift */; };
-		0708B8802AC3BB5C00FB451B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B87F2AC3BB5C00FB451B /* Event.swift */; };
+		0708B8802AC3BB5C00FB451B /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B87F2AC3BB5C00FB451B /* History.swift */; };
 		0708B8832AC3BC5200FB451B /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B8822AC3BC5200FB451B /* HistoryViewModel.swift */; };
 		0708B8852AC3BCAF00FB451B /* HistoriesWithSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B8842AC3BCAF00FB451B /* HistoriesWithSection.swift */; };
+		0708B8872AC402EE00FB451B /* AllEventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B8862AC402EE00FB451B /* AllEventsResponse.swift */; };
+		0708B8892AC4030300FB451B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B8882AC4030300FB451B /* Event.swift */; };
+		0708B88D2AC4119500FB451B /* DetailEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B88C2AC4119500FB451B /* DetailEventViewModel.swift */; };
+		0708B88F2AC4125300FB451B /* SingleEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B88E2AC4125300FB451B /* SingleEventResponse.swift */; };
+		0708B8912AC41AF300FB451B /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B8902AC41AF300FB451B /* LocationViewModel.swift */; };
+		0708B8932AC64A6500FB451B /* ChangePasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B8922AC64A6500FB451B /* ChangePasswordResponse.swift */; };
+		0708B8962AC64CD100FB451B /* UpdatePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B8952AC64CD100FB451B /* UpdatePasswordViewModel.swift */; };
+		0708B8992AC6719800FB451B /* AbsentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B8982AC6719800FB451B /* AbsentViewModel.swift */; };
+		0708B89B2AC679F600FB451B /* AbsentInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B89A2AC679F600FB451B /* AbsentInResponse.swift */; };
+		0708B89D2AC67A2900FB451B /* AbsentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B89C2AC67A2900FB451B /* AbsentEntity.swift */; };
+		0708B89F2AC689A200FB451B /* CheckAbsentInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B89E2AC689A200FB451B /* CheckAbsentInResponse.swift */; };
+		0708B8A12AC689E200FB451B /* CheckAbsent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708B8A02AC689E200FB451B /* CheckAbsent.swift */; };
+		0728F9EC2ADF69E60038FBFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0728F9EB2ADF69E60038FBFA /* GoogleService-Info.plist */; };
+		0728F9EF2ADF6D6A0038FBFA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0728F9EE2ADF6D6A0038FBFA /* FirebaseAnalytics */; };
+		0728F9F12ADF6D6A0038FBFA /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0728F9F02ADF6D6A0038FBFA /* FirebaseCrashlytics */; };
+		0728F9F32ADF6D6A0038FBFA /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 0728F9F22ADF6D6A0038FBFA /* FirebaseMessaging */; };
+		0728F9F52ADF6D6A0038FBFA /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 0728F9F42ADF6D6A0038FBFA /* FirebaseStorageCombine-Community */; };
+		0728F9F72ADF75300038FBFA /* FCMTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728F9F62ADF75300038FBFA /* FCMTokenResponse.swift */; };
+		073B44D02ACBF5110045B65E /* CreatePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B44CF2ACBF5110045B65E /* CreatePasswordViewModel.swift */; };
+		073B44D32ACBF99D0045B65E /* FaceRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B44D22ACBF99D0045B65E /* FaceRegister.swift */; };
+		075C5CF62ACA6E8A00B2F22E /* CheckAbsentOutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C5CF52ACA6E8A00B2F22E /* CheckAbsentOutResponse.swift */; };
+		075C5CF82ACA6EDF00B2F22E /* AbsentOutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C5CF72ACA6EDF00B2F22E /* AbsentOutResponse.swift */; };
+		076973BB2B078709009B1EB4 /* GuestRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076973BA2B078709009B1EB4 /* GuestRegisterView.swift */; };
+		076973BE2B0787FC009B1EB4 /* GuestRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076973BD2B0787FC009B1EB4 /* GuestRegisterViewModel.swift */; };
+		077087302ADB5D63001C5E6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0770872F2ADB5D63001C5E6F /* AppDelegate.swift */; };
+		077087332ADB5E0E001C5E6F /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077087322ADB5E0E001C5E6F /* NotificationManager.swift */; };
+		0779CAE12B0C6E1A00F05DF7 /* Webview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779CAE02B0C6E1A00F05DF7 /* Webview.swift */; };
+		0779CAE32B0C6F2000F05DF7 /* PrivacyPolice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779CAE22B0C6F2000F05DF7 /* PrivacyPolice.swift */; };
 		078109492AB42C63005B4F1B /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078109482AB42C63005B4F1B /* AboutView.swift */; };
 		0781094C2AB4831A005B4F1B /* UpdatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0781094B2AB4831A005B4F1B /* UpdatePasswordView.swift */; };
 		0781094F2AB48A02005B4F1B /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0781094E2AB48A02005B4F1B /* CreatePasswordView.swift */; };
@@ -19,11 +47,11 @@
 		078109582AB48EF6005B4F1B /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078109572AB48EF6005B4F1B /* NotificationView.swift */; };
 		0781095C2AB49191005B4F1B /* AbsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0781095B2AB49191005B4F1B /* AbsentView.swift */; };
 		079538DA2AB573830019C980 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079538D92AB573830019C980 /* CameraPreview.swift */; };
-		079538DD2AB573B80019C980 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079538DC2AB573B80019C980 /* CameraModel.swift */; };
-		079538DF2AB57CEC0019C980 /* AbsentSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079538DE2AB57CEC0019C980 /* AbsentSuccessView.swift */; };
+		079538DD2AB573B80019C980 /* AbsentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079538DC2AB573B80019C980 /* AbsentModel.swift */; };
 		079538E22AB57DB40019C980 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 079538E12AB57DB40019C980 /* Lottie */; };
 		079538E52AB57E5B0019C980 /* success_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 079538E42AB57E5B0019C980 /* success_animation.json */; };
 		079538E72AB57F2B0019C980 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079538E62AB57F2B0019C980 /* LottieView.swift */; };
+		079A2CC22ACE91D10035F72B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A2CC12ACE91D10035F72B /* ForgotPasswordViewModel.swift */; };
 		079D028B2ABAA97C00787F52 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D028A2ABAA97C00787F52 /* Notification.swift */; };
 		079D028D2ABAA98600787F52 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D028C2ABAA98600787F52 /* Pagination.swift */; };
 		079D028F2ABAA9D700787F52 /* NotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D028E2ABAA9D700787F52 /* NotificationResponse.swift */; };
@@ -42,6 +70,13 @@
 		07A5D6F92AB97953007241E2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6F82AB97953007241E2 /* Helpers.swift */; };
 		07A5D6FC2AB987E3007241E2 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5D6FB2AB987E3007241E2 /* SplashViewModel.swift */; };
 		07AAAB172ABBD67E004E93E0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AAAB162ABBD67E004E93E0 /* HomeViewModel.swift */; };
+		07AFB3F62ACD031C00FBE6FA /* FaceRegisterViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AFB3F52ACD031C00FBE6FA /* FaceRegisterViewmodel.swift */; };
+		07AFB3F82ACD053300FBE6FA /* FaceRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AFB3F72ACD053300FBE6FA /* FaceRegisterResponse.swift */; };
+		07AFB3FA2ACD116F00FBE6FA /* CallCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AFB3F92ACD116F00FBE6FA /* CallCenter.swift */; };
+		07AFB3FC2ACD11B300FBE6FA /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AFB3FB2ACD11B300FBE6FA /* ForgotPassword.swift */; };
+		07AFB3FE2ACD11CF00FBE6FA /* CallCenterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AFB3FD2ACD11CF00FBE6FA /* CallCenterResponse.swift */; };
+		07AFB4002ACD11FA00FBE6FA /* ForgotPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AFB3FF2ACD11FA00FBE6FA /* ForgotPasswordResponse.swift */; };
+		07B5F8F72ACBA80C00AAF959 /* DetailHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5F8F62ACBA80C00AAF959 /* DetailHistoryView.swift */; };
 		07F66DBE2AB2E8A5003DF9FB /* AbsensiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F66DBD2AB2E8A5003DF9FB /* AbsensiApp.swift */; };
 		07F66DC02AB2E8A5003DF9FB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F66DBF2AB2E8A5003DF9FB /* MainView.swift */; };
 		07F66DC22AB2E8A7003DF9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07F66DC12AB2E8A7003DF9FB /* Assets.xcassets */; };
@@ -61,9 +96,35 @@
 
 /* Begin PBXFileReference section */
 		0708B87D2AC3BB1A00FB451B /* HistoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoriesResponse.swift; sourceTree = "<group>"; };
-		0708B87F2AC3BB5C00FB451B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0708B87F2AC3BB5C00FB451B /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		0708B8822AC3BC5200FB451B /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		0708B8842AC3BCAF00FB451B /* HistoriesWithSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoriesWithSection.swift; sourceTree = "<group>"; };
+		0708B8862AC402EE00FB451B /* AllEventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsResponse.swift; sourceTree = "<group>"; };
+		0708B8882AC4030300FB451B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0708B88C2AC4119500FB451B /* DetailEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventViewModel.swift; sourceTree = "<group>"; };
+		0708B88E2AC4125300FB451B /* SingleEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEventResponse.swift; sourceTree = "<group>"; };
+		0708B8902AC41AF300FB451B /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		0708B8922AC64A6500FB451B /* ChangePasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponse.swift; sourceTree = "<group>"; };
+		0708B8952AC64CD100FB451B /* UpdatePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewModel.swift; sourceTree = "<group>"; };
+		0708B8982AC6719800FB451B /* AbsentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentViewModel.swift; sourceTree = "<group>"; };
+		0708B89A2AC679F600FB451B /* AbsentInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentInResponse.swift; sourceTree = "<group>"; };
+		0708B89C2AC67A2900FB451B /* AbsentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentEntity.swift; sourceTree = "<group>"; };
+		0708B89E2AC689A200FB451B /* CheckAbsentInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAbsentInResponse.swift; sourceTree = "<group>"; };
+		0708B8A02AC689E200FB451B /* CheckAbsent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAbsent.swift; sourceTree = "<group>"; };
+		07207A822AD008530007BF65 /* Absensi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Absensi.entitlements; sourceTree = "<group>"; };
+		0728F9EB2ADF69E60038FBFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0728F9F62ADF75300038FBFA /* FCMTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMTokenResponse.swift; sourceTree = "<group>"; };
+		073B44CF2ACBF5110045B65E /* CreatePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewModel.swift; sourceTree = "<group>"; };
+		073B44D22ACBF99D0045B65E /* FaceRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceRegister.swift; sourceTree = "<group>"; };
+		075C5CF52ACA6E8A00B2F22E /* CheckAbsentOutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAbsentOutResponse.swift; sourceTree = "<group>"; };
+		075C5CF72ACA6EDF00B2F22E /* AbsentOutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentOutResponse.swift; sourceTree = "<group>"; };
+		076973BA2B078709009B1EB4 /* GuestRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestRegisterView.swift; sourceTree = "<group>"; };
+		076973BD2B0787FC009B1EB4 /* GuestRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestRegisterViewModel.swift; sourceTree = "<group>"; };
+		0770872F2ADB5D63001C5E6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		077087322ADB5E0E001C5E6F /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		0779CAE02B0C6E1A00F05DF7 /* Webview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webview.swift; sourceTree = "<group>"; };
+		0779CAE22B0C6F2000F05DF7 /* PrivacyPolice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolice.swift; sourceTree = "<group>"; };
+		0780F2DC2B1D92EF0017078C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		078109482AB42C63005B4F1B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		0781094B2AB4831A005B4F1B /* UpdatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordView.swift; sourceTree = "<group>"; };
 		0781094E2AB48A02005B4F1B /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
@@ -72,10 +133,11 @@
 		078109572AB48EF6005B4F1B /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		0781095B2AB49191005B4F1B /* AbsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentView.swift; sourceTree = "<group>"; };
 		079538D92AB573830019C980 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
-		079538DC2AB573B80019C980 /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
-		079538DE2AB57CEC0019C980 /* AbsentSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentSuccessView.swift; sourceTree = "<group>"; };
+		079538DC2AB573B80019C980 /* AbsentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentModel.swift; sourceTree = "<group>"; };
 		079538E42AB57E5B0019C980 /* success_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success_animation.json; sourceTree = "<group>"; };
 		079538E62AB57F2B0019C980 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		079A2CBF2ACE8FDC0035F72B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		079A2CC12ACE91D10035F72B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		079D028A2ABAA97C00787F52 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		079D028C2ABAA98600787F52 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		079D028E2ABAA9D700787F52 /* NotificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationResponse.swift; sourceTree = "<group>"; };
@@ -93,7 +155,14 @@
 		07A5D6F82AB97953007241E2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		07A5D6FB2AB987E3007241E2 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		07AAAB162ABBD67E004E93E0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		07F66DBA2AB2E8A5003DF9FB /* Absensi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Absensi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07AFB3F52ACD031C00FBE6FA /* FaceRegisterViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceRegisterViewmodel.swift; sourceTree = "<group>"; };
+		07AFB3F72ACD053300FBE6FA /* FaceRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceRegisterResponse.swift; sourceTree = "<group>"; };
+		07AFB3F92ACD116F00FBE6FA /* CallCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallCenter.swift; sourceTree = "<group>"; };
+		07AFB3FB2ACD11B300FBE6FA /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		07AFB3FD2ACD11CF00FBE6FA /* CallCenterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallCenterResponse.swift; sourceTree = "<group>"; };
+		07AFB3FF2ACD11FA00FBE6FA /* ForgotPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResponse.swift; sourceTree = "<group>"; };
+		07B5F8F62ACBA80C00AAF959 /* DetailHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHistoryView.swift; sourceTree = "<group>"; };
+		07F66DBA2AB2E8A5003DF9FB /* Absensi Kegiatan Tabanan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Absensi Kegiatan Tabanan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F66DBD2AB2E8A5003DF9FB /* AbsensiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsensiApp.swift; sourceTree = "<group>"; };
 		07F66DBF2AB2E8A5003DF9FB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		07F66DC12AB2E8A7003DF9FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,7 +186,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				079538E22AB57DB40019C980 /* Lottie in Frameworks */,
+				0728F9F12ADF6D6A0038FBFA /* FirebaseCrashlytics in Frameworks */,
+				0728F9F32ADF6D6A0038FBFA /* FirebaseMessaging in Frameworks */,
 				07A5D6DD2AB95725007241E2 /* Alamofire in Frameworks */,
+				0728F9F52ADF6D6A0038FBFA /* FirebaseStorageCombine-Community in Frameworks */,
+				0728F9EF2ADF6D6A0038FBFA /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +203,71 @@
 				0708B8822AC3BC5200FB451B /* HistoryViewModel.swift */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		0708B88A2AC4056100FB451B /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				07A5D6F22AB9788B007241E2 /* Meta.swift */,
+				079D028C2ABAA98600787F52 /* Pagination.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		0708B88B2AC4118500FB451B /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				0708B8902AC41AF300FB451B /* LocationViewModel.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		0708B8942AC64CC100FB451B /* UpdatePassword */ = {
+			isa = PBXGroup;
+			children = (
+				0708B8952AC64CD100FB451B /* UpdatePasswordViewModel.swift */,
+			);
+			path = UpdatePassword;
+			sourceTree = "<group>";
+		};
+		0708B8972AC6718500FB451B /* Absent */ = {
+			isa = PBXGroup;
+			children = (
+				0708B8982AC6719800FB451B /* AbsentViewModel.swift */,
+			);
+			path = Absent;
+			sourceTree = "<group>";
+		};
+		073B44D12ACBF98E0045B65E /* FaceRegister */ = {
+			isa = PBXGroup;
+			children = (
+				073B44D22ACBF99D0045B65E /* FaceRegister.swift */,
+			);
+			path = FaceRegister;
+			sourceTree = "<group>";
+		};
+		076973B92B0786F0009B1EB4 /* GuestRegister */ = {
+			isa = PBXGroup;
+			children = (
+				076973BA2B078709009B1EB4 /* GuestRegisterView.swift */,
+			);
+			path = GuestRegister;
+			sourceTree = "<group>";
+		};
+		076973BC2B0787D5009B1EB4 /* GuestRegister */ = {
+			isa = PBXGroup;
+			children = (
+				076973BD2B0787FC009B1EB4 /* GuestRegisterViewModel.swift */,
+			);
+			path = GuestRegister;
+			sourceTree = "<group>";
+		};
+		077087312ADB5DF4001C5E6F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				077087322ADB5E0E001C5E6F /* NotificationManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		078109472AB42C58005B4F1B /* About */ = {
@@ -168,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				078109542AB48CA8005B4F1B /* HistoryView.swift */,
+				07B5F8F62ACBA80C00AAF959 /* DetailHistoryView.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -183,18 +322,9 @@
 		078109592AB4916E005B4F1B /* Absent */ = {
 			isa = PBXGroup;
 			children = (
-				0781095A2AB4917F005B4F1B /* Component */,
 				0781095B2AB49191005B4F1B /* AbsentView.swift */,
-				079538DE2AB57CEC0019C980 /* AbsentSuccessView.swift */,
 			);
 			path = Absent;
-			sourceTree = "<group>";
-		};
-		0781095A2AB4917F005B4F1B /* Component */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Component;
 			sourceTree = "<group>";
 		};
 		079538E32AB57E4D0019C980 /* Animation */ = {
@@ -203,6 +333,14 @@
 				079538E42AB57E5B0019C980 /* success_animation.json */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		079A2CC02ACE91BE0035F72B /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				079A2CC12ACE91D10035F72B /* ForgotPasswordViewModel.swift */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		079D02902ABAAAFF00787F52 /* Notification */ = {
@@ -216,7 +354,7 @@
 		079D02912ABAAB0C00787F52 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				079538DC2AB573B80019C980 /* CameraModel.swift */,
+				079538DC2AB573B80019C980 /* AbsentModel.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -298,9 +436,15 @@
 		07A5D6ED2AB97731007241E2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				079D028A2ABAA97C00787F52 /* Notification.swift */,
 				07A5D6EE2AB97830007241E2 /* Credential.swift */,
 				07A5D6F02AB97854007241E2 /* User.swift */,
-				0708B87F2AC3BB5C00FB451B /* Event.swift */,
+				0708B87F2AC3BB5C00FB451B /* History.swift */,
+				0708B8882AC4030300FB451B /* Event.swift */,
+				0708B89C2AC67A2900FB451B /* AbsentEntity.swift */,
+				0708B8A02AC689E200FB451B /* CheckAbsent.swift */,
+				07AFB3F92ACD116F00FBE6FA /* CallCenter.swift */,
+				07AFB3FB2ACD11B300FBE6FA /* ForgotPassword.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -311,6 +455,17 @@
 				07A5D6F52AB978E1007241E2 /* LoginResponse.swift */,
 				079D028E2ABAA9D700787F52 /* NotificationResponse.swift */,
 				0708B87D2AC3BB1A00FB451B /* HistoriesResponse.swift */,
+				0708B8862AC402EE00FB451B /* AllEventsResponse.swift */,
+				0708B88E2AC4125300FB451B /* SingleEventResponse.swift */,
+				0708B8922AC64A6500FB451B /* ChangePasswordResponse.swift */,
+				0708B89A2AC679F600FB451B /* AbsentInResponse.swift */,
+				0708B89E2AC689A200FB451B /* CheckAbsentInResponse.swift */,
+				075C5CF52ACA6E8A00B2F22E /* CheckAbsentOutResponse.swift */,
+				075C5CF72ACA6EDF00B2F22E /* AbsentOutResponse.swift */,
+				07AFB3F72ACD053300FBE6FA /* FaceRegisterResponse.swift */,
+				07AFB3FD2ACD11CF00FBE6FA /* CallCenterResponse.swift */,
+				07AFB3FF2ACD11FA00FBE6FA /* ForgotPasswordResponse.swift */,
+				0728F9F62ADF75300038FBFA /* FCMTokenResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -335,8 +490,25 @@
 			isa = PBXGroup;
 			children = (
 				07AAAB162ABBD67E004E93E0 /* HomeViewModel.swift */,
+				0708B88C2AC4119500FB451B /* DetailEventViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		07AFB3F42ACD030200FBE6FA /* FaceRegister */ = {
+			isa = PBXGroup;
+			children = (
+				07AFB3F52ACD031C00FBE6FA /* FaceRegisterViewmodel.swift */,
+			);
+			path = FaceRegister;
+			sourceTree = "<group>";
+		};
+		07B5F8F82ACBB26100AAF959 /* CreatePassword */ = {
+			isa = PBXGroup;
+			children = (
+				073B44CF2ACBF5110045B65E /* CreatePasswordViewModel.swift */,
+			);
+			path = CreatePassword;
 			sourceTree = "<group>";
 		};
 		07F66DB12AB2E8A5003DF9FB = {
@@ -350,7 +522,7 @@
 		07F66DBB2AB2E8A5003DF9FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07F66DBA2AB2E8A5003DF9FB /* Absensi.app */,
+				07F66DBA2AB2E8A5003DF9FB /* Absensi Kegiatan Tabanan.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -358,12 +530,16 @@
 		07F66DBC2AB2E8A5003DF9FB /* Absensi */ = {
 			isa = PBXGroup;
 			children = (
+				0728F9EB2ADF69E60038FBFA /* GoogleService-Info.plist */,
+				07207A822AD008530007BF65 /* Absensi.entitlements */,
+				079A2CBF2ACE8FDC0035F72B /* Info.plist */,
 				07F66DCE2AB2E901003DF9FB /* Other */,
 				07A5D6D82AB956E3007241E2 /* Data */,
 				07F66DCB2AB2E8B8003DF9FB /* Model */,
 				07F66DCD2AB2E8EA003DF9FB /* View */,
 				07F66DCC2AB2E8DF003DF9FB /* ViewModel */,
 				07F66DC32AB2E8A7003DF9FB /* Preview Content */,
+				0780F2DC2B1D92EF0017078C /* PrivacyInfo.xcprivacy */,
 			);
 			path = Absensi;
 			sourceTree = "<group>";
@@ -379,12 +555,10 @@
 		07F66DCB2AB2E8B8003DF9FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				07A5D6ED2AB97731007241E2 /* Main */,
 				079D02942ABAB01200787F52 /* Interface */,
 				07A5D6F42AB978CA007241E2 /* Response */,
-				07A5D6ED2AB97731007241E2 /* Main */,
-				07A5D6F22AB9788B007241E2 /* Meta.swift */,
-				079D028A2ABAA97C00787F52 /* Notification.swift */,
-				079D028C2ABAA98600787F52 /* Pagination.swift */,
+				0708B88A2AC4056100FB451B /* Support */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -392,6 +566,13 @@
 		07F66DCC2AB2E8DF003DF9FB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				076973BC2B0787D5009B1EB4 /* GuestRegister */,
+				079A2CC02ACE91BE0035F72B /* ForgotPassword */,
+				07AFB3F42ACD030200FBE6FA /* FaceRegister */,
+				07B5F8F82ACBB26100AAF959 /* CreatePassword */,
+				0708B8972AC6718500FB451B /* Absent */,
+				0708B8942AC64CC100FB451B /* UpdatePassword */,
+				0708B88B2AC4118500FB451B /* Location */,
 				0708B8812AC3BC4000FB451B /* History */,
 				07AAAB152ABBD65F004E93E0 /* Home */,
 				079D02902ABAAAFF00787F52 /* Notification */,
@@ -407,7 +588,6 @@
 			children = (
 				07F66DD02AB2E9D4003DF9FB /* Component */,
 				07F66DCF2AB2E9C5003DF9FB /* Pages */,
-				07F66DBF2AB2E8A5003DF9FB /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -415,12 +595,15 @@
 		07F66DCE2AB2E901003DF9FB /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				077087312ADB5DF4001C5E6F /* Manager */,
 				07A5D6EA2AB9675C007241E2 /* Env */,
 				07A5D6E02AB962B9007241E2 /* UserSettings */,
 				07A5D6F72AB97936007241E2 /* Helpers */,
 				079538E32AB57E4D0019C980 /* Animation */,
 				07F66DBD2AB2E8A5003DF9FB /* AbsensiApp.swift */,
+				07F66DBF2AB2E8A5003DF9FB /* MainView.swift */,
 				07F66DC12AB2E8A7003DF9FB /* Assets.xcassets */,
+				0770872F2ADB5D63001C5E6F /* AppDelegate.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -428,6 +611,8 @@
 		07F66DCF2AB2E9C5003DF9FB /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				076973B92B0786F0009B1EB4 /* GuestRegister */,
+				073B44D12ACBF98E0045B65E /* FaceRegister */,
 				078109592AB4916E005B4F1B /* Absent */,
 				078109562AB48EE6005B4F1B /* Notification */,
 				078109532AB48C7A005B4F1B /* History */,
@@ -454,6 +639,8 @@
 				07F66DDD2AB30651003DF9FB /* AppNavlink.swift */,
 				079538D92AB573830019C980 /* CameraPreview.swift */,
 				079538E62AB57F2B0019C980 /* LottieView.swift */,
+				0779CAE02B0C6E1A00F05DF7 /* Webview.swift */,
+				0779CAE22B0C6F2000F05DF7 /* PrivacyPolice.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -534,9 +721,13 @@
 			packageProductDependencies = (
 				079538E12AB57DB40019C980 /* Lottie */,
 				07A5D6DC2AB95725007241E2 /* Alamofire */,
+				0728F9EE2ADF6D6A0038FBFA /* FirebaseAnalytics */,
+				0728F9F02ADF6D6A0038FBFA /* FirebaseCrashlytics */,
+				0728F9F22ADF6D6A0038FBFA /* FirebaseMessaging */,
+				0728F9F42ADF6D6A0038FBFA /* FirebaseStorageCombine-Community */,
 			);
 			productName = Absensi;
-			productReference = 07F66DBA2AB2E8A5003DF9FB /* Absensi.app */;
+			productReference = 07F66DBA2AB2E8A5003DF9FB /* Absensi Kegiatan Tabanan.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -566,6 +757,7 @@
 			packageReferences = (
 				079538E02AB57DB40019C980 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				07A5D6DB2AB95725007241E2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				0728F9ED2ADF6D6A0038FBFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 07F66DBB2AB2E8A5003DF9FB /* Products */;
 			projectDirPath = "";
@@ -581,6 +773,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0728F9EC2ADF69E60038FBFA /* GoogleService-Info.plist in Resources */,
 				07F66DC52AB2E8A7003DF9FB /* Preview Assets.xcassets in Resources */,
 				079538E52AB57E5B0019C980 /* success_animation.json in Resources */,
 				07F66DC22AB2E8A7003DF9FB /* Assets.xcassets in Resources */,
@@ -595,35 +788,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				07A5D6E92AB9663A007241E2 /* NetworkRepository.swift in Sources */,
-				0708B8802AC3BB5C00FB451B /* Event.swift in Sources */,
+				0708B8802AC3BB5C00FB451B /* History.swift in Sources */,
 				07F66DC02AB2E8A5003DF9FB /* MainView.swift in Sources */,
+				0708B8912AC41AF300FB451B /* LocationViewModel.swift in Sources */,
 				079D02932ABAAB3C00787F52 /* NotificationViewModel.swift in Sources */,
+				0708B8992AC6719800FB451B /* AbsentViewModel.swift in Sources */,
 				07F66DEA2AB32129003DF9FB /* MapView.swift in Sources */,
-				079538DD2AB573B80019C980 /* CameraModel.swift in Sources */,
+				079538DD2AB573B80019C980 /* AbsentModel.swift in Sources */,
+				0708B88D2AC4119500FB451B /* DetailEventViewModel.swift in Sources */,
 				07F66DBE2AB2E8A5003DF9FB /* AbsensiApp.swift in Sources */,
 				079538DA2AB573830019C980 /* CameraPreview.swift in Sources */,
+				076973BE2B0787FC009B1EB4 /* GuestRegisterViewModel.swift in Sources */,
+				0708B8962AC64CD100FB451B /* UpdatePasswordViewModel.swift in Sources */,
+				07AFB3FE2ACD11CF00FBE6FA /* CallCenterResponse.swift in Sources */,
 				079D028D2ABAA98600787F52 /* Pagination.swift in Sources */,
 				07A5D6DA2AB95702007241E2 /* ServerAccessor.swift in Sources */,
+				0728F9F72ADF75300038FBFA /* FCMTokenResponse.swift in Sources */,
 				078109522AB48A94005B4F1B /* ForgotPasswordView.swift in Sources */,
+				075C5CF62ACA6E8A00B2F22E /* CheckAbsentOutResponse.swift in Sources */,
+				0708B89F2AC689A200FB451B /* CheckAbsentInResponse.swift in Sources */,
+				077087302ADB5D63001C5E6F /* AppDelegate.swift in Sources */,
 				07F66DD62AB2EF1E003DF9FB /* LoginView.swift in Sources */,
 				07A5D6EC2AB96770007241E2 /* Env.swift in Sources */,
 				07A5D6FC2AB987E3007241E2 /* SplashViewModel.swift in Sources */,
 				07A5D6F92AB97953007241E2 /* Helpers.swift in Sources */,
 				07A5D6E52AB96528007241E2 /* LoginViewModel.swift in Sources */,
 				0708B87E2AC3BB1A00FB451B /* HistoriesResponse.swift in Sources */,
+				0708B8872AC402EE00FB451B /* AllEventsResponse.swift in Sources */,
 				07F66DE52AB30C60003DF9FB /* HomeView.swift in Sources */,
 				07A5D6F32AB9788B007241E2 /* Meta.swift in Sources */,
+				0708B89B2AC679F600FB451B /* AbsentInResponse.swift in Sources */,
 				07A5D6F12AB97854007241E2 /* User.swift in Sources */,
 				0781094F2AB48A02005B4F1B /* CreatePasswordView.swift in Sources */,
+				073B44D02ACBF5110045B65E /* CreatePasswordViewModel.swift in Sources */,
 				078109552AB48CA8005B4F1B /* HistoryView.swift in Sources */,
 				0708B8852AC3BCAF00FB451B /* HistoriesWithSection.swift in Sources */,
+				0708B89D2AC67A2900FB451B /* AbsentEntity.swift in Sources */,
 				07F66DD32AB2EA5C003DF9FB /* SplashView.swift in Sources */,
 				07F66DE12AB309F1003DF9FB /* DashboardView.swift in Sources */,
+				07B5F8F72ACBA80C00AAF959 /* DetailHistoryView.swift in Sources */,
+				07AFB3F62ACD031C00FBE6FA /* FaceRegisterViewmodel.swift in Sources */,
+				0708B8892AC4030300FB451B /* Event.swift in Sources */,
 				07AAAB172ABBD67E004E93E0 /* HomeViewModel.swift in Sources */,
 				079D028B2ABAA97C00787F52 /* Notification.swift in Sources */,
 				07F66DD82AB30621003DF9FB /* AppTextField.swift in Sources */,
+				0779CAE12B0C6E1A00F05DF7 /* Webview.swift in Sources */,
+				079A2CC22ACE91D10035F72B /* ForgotPasswordViewModel.swift in Sources */,
 				078109492AB42C63005B4F1B /* AboutView.swift in Sources */,
 				07A5D6F62AB978E1007241E2 /* LoginResponse.swift in Sources */,
+				07AFB3FA2ACD116F00FBE6FA /* CallCenter.swift in Sources */,
 				07F66DED2AB334BB003DF9FB /* DetailEventView.swift in Sources */,
 				07F66DDC2AB30642003DF9FB /* AppButton.swift in Sources */,
 				07A5D6E22AB962CC007241E2 /* UserSettings.swift in Sources */,
@@ -631,14 +844,24 @@
 				079D028F2ABAA9D700787F52 /* NotificationResponse.swift in Sources */,
 				07A5D6EF2AB97830007241E2 /* Credential.swift in Sources */,
 				0708B8832AC3BC5200FB451B /* HistoryViewModel.swift in Sources */,
+				0708B8932AC64A6500FB451B /* ChangePasswordResponse.swift in Sources */,
 				079D02962ABAB02D00787F52 /* NotificationWithSection.swift in Sources */,
+				073B44D32ACBF99D0045B65E /* FaceRegister.swift in Sources */,
+				076973BB2B078709009B1EB4 /* GuestRegisterView.swift in Sources */,
 				0781094C2AB4831A005B4F1B /* UpdatePasswordView.swift in Sources */,
 				07F66DE72AB30CA4003DF9FB /* ProfileView.swift in Sources */,
-				079538DF2AB57CEC0019C980 /* AbsentSuccessView.swift in Sources */,
+				0708B88F2AC4125300FB451B /* SingleEventResponse.swift in Sources */,
+				07AFB4002ACD11FA00FBE6FA /* ForgotPasswordResponse.swift in Sources */,
+				07AFB3F82ACD053300FBE6FA /* FaceRegisterResponse.swift in Sources */,
 				078109582AB48EF6005B4F1B /* NotificationView.swift in Sources */,
+				0708B8A12AC689E200FB451B /* CheckAbsent.swift in Sources */,
+				075C5CF82ACA6EDF00B2F22E /* AbsentOutResponse.swift in Sources */,
+				0779CAE32B0C6F2000F05DF7 /* PrivacyPolice.swift in Sources */,
 				07F66DDE2AB30651003DF9FB /* AppNavlink.swift in Sources */,
 				0781095C2AB49191005B4F1B /* AbsentView.swift in Sources */,
 				079538E72AB57F2B0019C980 /* LottieView.swift in Sources */,
+				077087332ADB5E0E001C5E6F /* NotificationManager.swift in Sources */,
+				07AFB3FC2ACD11B300FBE6FA /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,27 +987,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Absensi/Absensi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Absensi/Preview Content\"";
-				DEVELOPMENT_TEAM = 9JT5S6HLB2;
+				DEVELOPMENT_TEAM = Z6FX9RTAPF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_FILE = Absensi/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Absensi Kegiatan Tabanan membutuhkan akses Kamera untuk proses absensi";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Absensi Kegiatan Tabanan membutuhkan akses lokasi untuk proses absensi";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Absensi Kegiatan Tabanan membutuhkan akses Photo untuk proses absensi";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.maiharta.absensi.Absensi;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = id.go.tabanankab.aum.app;
+				PRODUCT_NAME = "Absensi Kegiatan Tabanan";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -796,27 +1023,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Absensi/Absensi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Absensi/Preview Content\"";
-				DEVELOPMENT_TEAM = 9JT5S6HLB2;
+				DEVELOPMENT_TEAM = Z6FX9RTAPF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_FILE = Absensi/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Absensi Kegiatan Tabanan membutuhkan akses Kamera untuk proses absensi";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Absensi Kegiatan Tabanan membutuhkan akses lokasi untuk proses absensi";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Absensi Kegiatan Tabanan membutuhkan akses Photo untuk proses absensi";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.maiharta.absensi.Absensi;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = id.go.tabanankab.aum.app;
+				PRODUCT_NAME = "Absensi Kegiatan Tabanan";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -847,6 +1078,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0728F9ED2ADF6D6A0038FBFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.16.0;
+			};
+		};
 		079538E02AB57DB40019C980 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
@@ -866,6 +1105,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0728F9EE2ADF6D6A0038FBFA /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0728F9ED2ADF6D6A0038FBFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		0728F9F02ADF6D6A0038FBFA /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0728F9ED2ADF6D6A0038FBFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		0728F9F22ADF6D6A0038FBFA /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0728F9ED2ADF6D6A0038FBFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		0728F9F42ADF6D6A0038FBFA /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0728F9ED2ADF6D6A0038FBFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
 		079538E12AB57DB40019C980 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 079538E02AB57DB40019C980 /* XCRemoteSwiftPackageReference "lottie-spm" */;

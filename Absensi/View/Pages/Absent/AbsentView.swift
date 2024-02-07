@@ -10,9 +10,37 @@ import AVFoundation
 
 struct AbsentView: View {
     
-    @StateObject var camera =  CameraModel()
+    @StateObject var camera: AbsentModel = AbsentModel()
+    @ObservedObject private var lvm: LocationViewModel
     @Binding var isPresented: Bool
-    @State var showAlert = false
+    private var event: EventEntity
+    private var state: AbsentState
+    
+    init(isPresented: Binding<Bool>,
+         event: EventEntity,
+         state: AbsentState
+    ) {
+        self.lvm = LocationViewModel()
+        self._isPresented = isPresented
+        self.event = event
+        self.state = state
+    }
+    
+    func absentAction(){
+        if lvm.checkUserInRadius(lat: camera.eventData?.lat ?? "0", lon: camera.eventData?.long ?? "0", radius: camera.eventData?.radius ?? 0) {
+            switch state {
+            case .absent_in:
+                camera.checkAbsentIN()
+            case .absent_out:
+                camera.checkAbsentOUT()
+            }
+        } else {
+            Helpers.shared.analyticsLog(itemID: "Absen", itemName: "User gagal absen karena berada diluar radius", contentType: .automatic)
+            camera.title = "Gagal"
+            camera.message = "Kamu berada di luar radius"
+            camera.showMessage.toggle()
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -53,19 +81,7 @@ struct AbsentView: View {
                 
                 Spacer()
                 if camera.isTaken {
-                    
-                    Button(action: camera.savePicture, label: {
-                        Text("Save")
-                            .foregroundColor(.black)
-                            .fontWeight(.semibold)
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 20)
-                            .background(Color.white)
-                            .clipShape(Capsule())
-                    })
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading)
-                    
+                    Text("Unknown")
                 } else {
 //                    NavigationLink(destination: {
 //                        AbsentSuccessView(isPresented: $isPresented)
@@ -74,40 +90,84 @@ struct AbsentView: View {
 //                    })
 //                    .padding()
 //                    .padding(.bottom, 25)
-//                    AppButton(title: "Absen", action: {showAlert.toggle()})
-//                        .padding()
-//                        .padding(.bottom, 25)
-//                    .frame(maxWidth: .infinity)
-//                    .alert(isPresented: $showAlert) {
-//                        Alert(
-//                            title: Text("Absen Gagal"),
-//                            message: Text("Wajah anda kurang good looking"),
-//                            primaryButton: .cancel(Text("Ulangi")) {
-//                                print("Ulangi")
-//                            },
-//                            secondaryButton: .destructive(Text("Kembali")) {
-//                            isPresented = false
-//                        })
-//                    }
+                    if camera.loading {
+                        ProgressView(value: Double(camera.perentage) / 100)
+                            .background()
+                            .padding()
+                            .background(.ultraThinMaterial)
+                            .overlay {
+                                GeometryReader { metric in
+                                    Capsule()
+                                        .fill(.red)
+                                        .frame(width: 10)
+                                        .padding(.trailing,  metric.size.width * 0.2)
+                                        .frame(maxWidth: .infinity, alignment: .trailing)
+                                        .padding(.vertical, 5)
+                                }
+                                
+                            }
+                    } else {
+                        AppButton(title: "Absen", showLoading: $camera.loading, action: {
+                            Helpers.shared.analyticsLog(itemID: "Absen", itemName: "Mencoba melakukan absen", contentType: .button)
+                            absentAction()
+                        })
+                    }
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            .alert(isPresented: $camera.showMessage) {
+                if camera.title != "Gagal" {
+                    Helpers.shared.analyticsLog(itemID: "Absen", itemName: "User berhasil absen", contentType: .automatic)
+                    return Alert(
+                        title: Text(camera.title),
+                        message: Text(camera.message),
+                        dismissButton: .cancel(Text("Kembali"), action: {
+                            isPresented = false
+                        })
+                    )
+                } else {
+                    Helpers.shared.analyticsLog(itemID: "Absen", itemName: "User gagal absen", contentType: .button)
+                    return Alert(
+                        title: Text(camera.title),
+                        message: Text(camera.message),
+                        primaryButton: .cancel(Text("Ulangi")) {
+                            Helpers.shared.analyticsLog(itemID: "Absen", itemName: "User mencoba absen setelah gagal", contentType: .button)
+                            self.absentAction()
+                            camera.session.startRunning()
+                        },
+                        secondaryButton: .destructive(Text("Kembali")) {
+                        isPresented = false
+                    })
+                }
+                
+            }
             
         }
-        .navigationTitle("Absen")
-        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             camera.check()
+            lvm.checkLocationPermission()
+            camera.setEvent(event: event)
         }
+        .onDisappear {
+            camera.dispose()
+        }
+    }
+}
+
+extension AbsentView {
+    enum AbsentState {
+        case absent_in
+        case absent_out
     }
 }
 
 
 struct AbsentView_Previews: PreviewProvider {
     static var previews: some View {
-        Text("Test")
-//        NavigationStack {
+        @State var example = true
+        NavigationStack {
+            Text("Hai")
 //            AbsentView(isPresented: $example)
-//        }
+        }
     }
 }

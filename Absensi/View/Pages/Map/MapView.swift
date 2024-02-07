@@ -14,34 +14,55 @@ struct City: Identifiable {
     let coordinate: CLLocationCoordinate2D
 }
 
+
 struct MapView: View {
     
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
+    @ObservedObject var location = LocationViewModel()
     
-    let annotations = [
-            City(name: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275)),
-            City(name: "Paris", coordinate: CLLocationCoordinate2D(latitude: 48.8567, longitude: 2.3508)),
-            City(name: "Rome", coordinate: CLLocationCoordinate2D(latitude: 41.9, longitude: 12.5)),
-            City(name: "Washington DC", coordinate: CLLocationCoordinate2D(latitude: 38.895111, longitude: -77.036667))
-        ]
+    let annotations: [EventEntity]
+    
+    init(annotations: [EventEntity]) {
+        self.annotations = annotations
+    }
     
     
     var body: some View {
-        Map(coordinateRegion: $region, annotationItems: annotations) {
+        Map(coordinateRegion: $location.region, showsUserLocation: true, annotationItems: annotations) {
 //            MapMarker(coordinate: $0.coordinate)
-            
-            MapAnnotation(coordinate: $0.coordinate) {
-                Circle()
-                    .strokeBorder(.red, lineWidth: 4)
-                    .frame(width: 40, height: 40)
+            MapAnnotation(
+                coordinate: CLLocationCoordinate2D(
+                    latitude: Double($0.lat ?? "0")!,
+                    longitude: Double($0.long ?? "0")!)) {
+                        VStack {
+                            Text("Lokasi acara\n\(location.checkUserDistanceWithEvent(lat: (annotations.first?.lat ?? "0"), lon: (annotations.first?.long ?? "0")))m dari lokasimu")
+                                .font(.caption)
+                                .shadow(color: .white, radius: 1)
+                                .multilineTextAlignment(.center)
+                            Image(systemName: "mappin")
+                                .foregroundColor(Color.red)
+                                .frame(width: 20, height: 20)
+                        }
+                
             }
+            
+//            MKCircle(center: $0.coordinate, radius: 2000)
         }
             .navigationTitle("Lokasi saat ini")
+            .onAppear {
+                Helpers.shared.analyticsLog(itemID: "About", itemName: "berada di halaman Map", contentType: .automatic)
+                location.eventLocation = CLLocationCoordinate2D(
+                    latitude: Double(annotations.first?.lat ?? "0")!,
+                    longitude: Double(annotations.first?.long ?? "0")!
+                )
+            }
+            .onDisappear {
+                Helpers.shared.analyticsLog(itemID: "About", itemName: "keluar dari halaman Map", contentType: .automatic)
+            }
     }
 }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(annotations: [EventEntity(id: nil, nama: nil, deskripsi: nil, tempat: nil, lat: nil, long: nil, radius: nil, tanggalEpoch: nil, absenMasukMulaiEpoch: nil, absenMasukSelesaiEpoch: nil, absenKeluarMulaiEpoch: nil, absenKeluarSelesaiEpoch: nil, status: nil, tanggal: nil, kuotaTerpakai: nil, kuotaTersisa: nil, totalKuota: nil, kuotaTakTerbatas: nil, absenMasukAtEpoch: nil, absenKeluarAtEpoch: nil)])
     }
 }

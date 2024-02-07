@@ -9,7 +9,7 @@ import Foundation
 
 struct HistoriesResponse: Codable {
     var meta: MetaEntity?
-    var riwayatAbsensi: [EventEntity]?
+    var riwayatAbsensi: [HistoryEntity]?
     var pagination: PaginationEntity?
 
     enum CodingKeys: String, CodingKey {

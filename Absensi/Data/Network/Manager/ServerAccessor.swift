@@ -20,7 +20,7 @@ class ServerAccessor {
     ///   - endpoint: Url yang dituju
     ///   - formData: Data yang ingin dikirimkan
     ///   - completion: response berupa json dan error
-    func post(endpoint: String, formData: [String: Any], completion: @escaping (Result<Any, Error>) -> Void) {
+    func post(endpoint: String, headers: [String:String] = [:], formData: [String: Any], completion: @escaping (Result<Any, Error>) -> Void) {
         guard let url = URL(string: endpoint) else {
             completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
             return
@@ -30,23 +30,43 @@ class ServerAccessor {
         request.httpMethod = "POST"
         let boundary = "Boundary-\(UUID().uuidString)"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        request.setValue("Absensi-IOS", forHTTPHeaderField: "User-Agent")
+        
+        headers.forEach { key, value in
+            request.setValue(value, forHTTPHeaderField: key)
+        }
         
         let httpBody = createMultipartBody(with: formData, boundary: boundary)
         request.httpBody = httpBody
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
+                
                 if let error = error {
                     print("Request error")
                     completion(.failure(error))
                     return
                 }
                 
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    print("Request code not 200")
+                guard let response = response as? HTTPURLResponse else {
+                    print("Response not found")
                     completion(.failure(NSError(domain: "Request not Success", code: -1, userInfo: nil)))
                     return
                 }
+                
+                print("\n\nREQUEST::POST")
+                print("Endpoint: \(response.url!)")
+                print("\(response.allHeaderFields.description)")
+                print("RESPONSE STATUS CODE : \(response.statusCode.description)")
+                print("END REQUEST\n\n")
+                
+                guard response.statusCode == 200 else {
+                    print("Request code not 200")
+                    print(String(data: data!, encoding: .utf8))
+                    completion(.failure(NSError(domain: "Request not Success", code: -1, userInfo: nil)))
+                    return
+                }
+                
                 
                 guard let data = data else {
                     print("No data received")
@@ -111,7 +131,9 @@ class ServerAccessor {
         completion: @escaping (AppResult<T>) -> Void)
     {
         
-        let httpHeaders = HTTPHeaders(headers)
+        var httpHeaders = HTTPHeaders(headers)
+        httpHeaders["User-Agent"] = "Absensi-IOS"
+        
         AF.request(endpoint, parameters: params, headers: httpHeaders)
             .responseDecodable(of: type) { response in
                 

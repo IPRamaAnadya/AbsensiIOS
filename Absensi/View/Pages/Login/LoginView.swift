@@ -11,6 +11,10 @@ struct LoginView: View {
     
     @ObservedObject private var viewModel = LoginViewModel()
     
+    
+    @State private var showPrivacyPolice = false
+    @State private var agree = false
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 15){
@@ -36,19 +40,46 @@ struct LoginView: View {
                 Rectangle()
                     .fill(Color.clear)
                     .frame(height: 10)
-                AppTextField(username: $viewModel.username, iconName: "person", hint: "Masukkan NIP Anda...")
+                AppTextField(username: $viewModel.username, iconName: "person", hint: "Masukkan Username Anda...")
                 AppSecureField(text: $viewModel.password, iconName: "lock", hint: "Masukkan kata sandi Anda...")
+                NavigationLink(destination: {
+                    ForgotPasswordView()
+                }, label: {
+                    Text("Lupa kata sandi?")
+                        .foregroundColor(Color("primary"))
+                })
+                
                 Rectangle()
                     .fill(Color.clear)
                     .frame(height: 10)
                 
                 AppButton(title: "Login",showLoading: $viewModel.showLoading, action: {
+                    if !agree {
+                        showPrivacyPolice.toggle()
+                        return
+                    }
                     viewModel.login()
+                })
+                
+                NavigationLink(destination: {
+                    GuestRegisterView()
+                }, label: {
+                    Text("Buat akun")
+                        .foregroundColor(Color("primary"))
                 })
                 .navigationDestination(isPresented: $viewModel.isLogin) {
                     DashboardView()
                         .navigationBarHidden(true)
                 }
+                .navigationDestination(isPresented: $viewModel.goCreatePassword) {
+                    CreatePasswordView(faceRegisterState: viewModel.loginResponse?.credential?.user?.telahDaftarWajah ?? true)
+                        .navigationBarHidden(true)
+                }
+                .navigationDestination(isPresented: $viewModel.goRegisterFace) {
+                    FaceRegisterView()
+                        .navigationBarHidden(true)
+                }
+
                 .alert(isPresented: $viewModel.showAlert) {
                     Alert(
                         title: Text("Login Gagal"),
@@ -58,21 +89,24 @@ struct LoginView: View {
                         })
                     )
                 }
+                .sheet(isPresented: $showPrivacyPolice, content: {
+                    PrivacyPoliceView(agree: $agree, showPrivacyPolice: $showPrivacyPolice)
+                        .onAppear {
+                            print("APPEAR")
+                        }
+                        .onDisappear {
+                            if agree {
+                                viewModel.login()
+                            }
+                        }
+                })
             }
-            
-            Rectangle()
-                .fill(Color.clear)
-                .frame(height: 10)
-            
-            NavigationLink(destination: {
-                ForgotPasswordView()
-            }, label: {
-                Text("Lupa kata sandi?")
-                    .foregroundColor(Color("primary"))
-            })
         }
         .background(Color.gray.opacity(0.01))
         .edgesIgnoringSafeArea(.top)
+        .onAppear {
+            Helpers.shared.analyticsLog(itemID: "Login", itemName: "berada di halaman login", contentType: .automatic)
+        }
     }
 }
 
