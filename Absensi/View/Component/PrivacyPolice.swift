@@ -20,7 +20,7 @@ struct PrivacyPoliceView: View {
     
     
     private var url: URL {
-        let urlString = "https://aum.tabanankab.go.id/privacy-policy"
+        let urlString = "\(Env.baseURL)/privacy-policy"
         let url = URL(string: urlString)
         return url!
     }
